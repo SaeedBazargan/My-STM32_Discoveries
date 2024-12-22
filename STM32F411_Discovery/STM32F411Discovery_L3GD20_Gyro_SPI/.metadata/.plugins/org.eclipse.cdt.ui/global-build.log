@@ -1,0 +1,1166 @@
+16:44:13 **** Clean-only build of configuration Debug for project L3GD20_Gyro_SPI ****
+make -j4 clean 
+rm -rf ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.su
+rm -rf ./Core/Startup/startup_stm32f411vetx.d ./Core/Startup/startup_stm32f411vetx.o
+rm -rf ./Core/Src/L3GD20.cyclo ./Core/Src/L3GD20.d ./Core/Src/L3GD20.o ./Core/Src/L3GD20.su ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/stm32f4xx_hal_msp.cyclo ./Core/Src/stm32f4xx_hal_msp.d ./Core/Src/stm32f4xx_hal_msp.o ./Core/Src/stm32f4xx_hal_msp.su ./Core/Src/stm32f4xx_it.cyclo ./Core/Src/stm32f4xx_it.d ./Core/Src/stm32f4xx_it.o ./Core/Src/stm32f4xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.cyclo ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32f4xx.cyclo ./Core/Src/system_stm32f4xx.d ./Core/Src/system_stm32f4xx.o ./Core/Src/system_stm32f4xx.su
+rm -rf L3GD20_Gyro_SPI.elf L3GD20_Gyro_SPI.list L3GD20_Gyro_SPI.map default.size.stdout
+ 
+16:44:14 **** Build of configuration Debug for project L3GD20_Gyro_SPI ****
+make -j4 all 
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o"
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32f411vetx.d" -MT"Core/Startup/startup_stm32f411vetx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Startup/startup_stm32f411vetx.o" "../Core/Startup/startup_stm32f411vetx.s"
+arm-none-eabi-gcc "../Core/Src/L3GD20.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/L3GD20.d" -MT"Core/Src/L3GD20.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/L3GD20.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+../Core/Src/main.c: In function 'Gyro_L3GD20_ReadData':
+../Core/Src/main.c:340:44: warning: passing argument 2 of 'L3GD20_ReadData' makes pointer from integer without a cast [-Wint-conversion]
+  340 |         L3GD20_ReadData(&hspi1, Gyro_Buffer[0], L3GD20_OUT_X_L_ADDR, 1);
+      |                                 ~~~~~~~~~~~^~~
+      |                                            |
+      |                                            uint8_t {aka unsigned char}
+In file included from ../Core/Src/main.c:24:
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:341:44: warning: passing argument 2 of 'L3GD20_ReadData' makes pointer from integer without a cast [-Wint-conversion]
+  341 |         L3GD20_ReadData(&hspi1, Gyro_Buffer[1], L3GD20_OUT_X_H_ADDR, 1);
+      |                                 ~~~~~~~~~~~^~~
+      |                                            |
+      |                                            uint8_t {aka unsigned char}
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:342:44: warning: passing argument 2 of 'L3GD20_ReadData' makes pointer from integer without a cast [-Wint-conversion]
+  342 |         L3GD20_ReadData(&hspi1, Gyro_Buffer[2], L3GD20_OUT_Y_L_ADDR, 1);
+      |                                 ~~~~~~~~~~~^~~
+      |                                            |
+      |                                            uint8_t {aka unsigned char}
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:343:44: warning: passing argument 2 of 'L3GD20_ReadData' makes pointer from integer without a cast [-Wint-conversion]
+  343 |         L3GD20_ReadData(&hspi1, Gyro_Buffer[3], L3GD20_OUT_Y_H_ADDR, 1);
+      |                                 ~~~~~~~~~~~^~~
+      |                                            |
+      |                                            uint8_t {aka unsigned char}
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:344:44: warning: passing argument 2 of 'L3GD20_ReadData' makes pointer from integer without a cast [-Wint-conversion]
+  344 |         L3GD20_ReadData(&hspi1, Gyro_Buffer[4], L3GD20_OUT_Z_L_ADDR, 1);
+      |                                 ~~~~~~~~~~~^~~
+      |                                            |
+      |                                            uint8_t {aka unsigned char}
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:345:44: warning: passing argument 2 of 'L3GD20_ReadData' makes pointer from integer without a cast [-Wint-conversion]
+  345 |         L3GD20_ReadData(&hspi1, Gyro_Buffer[5], L3GD20_OUT_Z_H_ADDR, 1);
+      |                                 ~~~~~~~~~~~^~~
+      |                                            |
+      |                                            uint8_t {aka unsigned char}
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c: In function 'L3GD20_loop':
+../Core/Src/main.c:367:17: warning: unused variable 'tempSum_Z' [-Wunused-variable]
+  367 |         int32_t tempSum_Z = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:366:17: warning: unused variable 'tempSum_Y' [-Wunused-variable]
+  366 |         int32_t tempSum_Y = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:365:17: warning: unused variable 'tempSum_X' [-Wunused-variable]
+  365 |         int32_t tempSum_X = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:364:18: warning: unused variable 'windowPosition' [-Wunused-variable]
+  364 |         uint32_t windowPosition = 0;
+      |                  ^~~~~~~~~~~~~~
+../Core/Src/main.c:362:17: warning: unused variable 'averageWindow_Z' [-Wunused-variable]
+  362 |         int16_t averageWindow_Z[AVERAGE_WINDOW_SIZE] = {0};
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:361:17: warning: unused variable 'averageWindow_Y' [-Wunused-variable]
+  361 |         int16_t averageWindow_Y[AVERAGE_WINDOW_SIZE] = {0};
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:360:17: warning: unused variable 'averageWindow_X' [-Wunused-variable]
+  360 |         int16_t averageWindow_X[AVERAGE_WINDOW_SIZE] = {0};
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:358:15: warning: unused variable 'difftime' [-Wunused-variable]
+  358 |         float difftime=0;
+      |               ^~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:125:16: warning: 'calibrationBuffer_Z' defined but not used [-Wunused-variable]
+  125 | static int16_t calibrationBuffer_Z[CALIBRATION_BUFFER_LENGTH];
+      |                ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:124:16: warning: 'calibrationBuffer_Y' defined but not used [-Wunused-variable]
+  124 | static int16_t calibrationBuffer_Y[CALIBRATION_BUFFER_LENGTH];
+      |                ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:16: warning: 'calibrationBuffer_X' defined but not used [-Wunused-variable]
+  123 | static int16_t calibrationBuffer_X[CALIBRATION_BUFFER_LENGTH];
+      |                ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:110:16: warning: 'TempNoise_Z' defined but not used [-Wunused-variable]
+  110 | static int32_t TempNoise_Z = 0;
+      |                ^~~~~~~~~~~
+../Core/Src/main.c:109:16: warning: 'TempNoise_Y' defined but not used [-Wunused-variable]
+  109 | static int32_t TempNoise_Y = 0;
+      |                ^~~~~~~~~~~
+../Core/Src/main.c:108:16: warning: 'TempNoise_X' defined but not used [-Wunused-variable]
+  108 | static int32_t TempNoise_X = 0;
+      |                ^~~~~~~~~~~
+../Core/Src/main.c:106:14: warning: 'LastAngleRate_Z' defined but not used [-Wunused-variable]
+  106 | static float LastAngleRate_Z = 0;
+      |              ^~~~~~~~~~~~~~~
+../Core/Src/main.c:105:14: warning: 'LastAngleRate_Y' defined but not used [-Wunused-variable]
+  105 | static float LastAngleRate_Y = 0;
+      |              ^~~~~~~~~~~~~~~
+../Core/Src/main.c:104:14: warning: 'LastAngleRate_X' defined but not used [-Wunused-variable]
+  104 | static float LastAngleRate_X = 0;
+      |              ^~~~~~~~~~~~~~~
+../Core/Src/main.c:102:14: warning: 'Angle_Z' defined but not used [-Wunused-variable]
+  102 | static float Angle_Z = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:101:14: warning: 'Angle_Y' defined but not used [-Wunused-variable]
+  101 | static float Angle_Y = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:100:14: warning: 'Angle_X' defined but not used [-Wunused-variable]
+  100 | static float Angle_X = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:98:14: warning: 'Noise_Z' defined but not used [-Wunused-variable]
+   98 | static float Noise_Z = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:97:14: warning: 'Noise_Y' defined but not used [-Wunused-variable]
+   97 | static float Noise_Y = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:96:14: warning: 'Noise_X' defined but not used [-Wunused-variable]
+   96 | static float Noise_X = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:94:16: warning: 'offset_z' defined but not used [-Wunused-variable]
+   94 | static int32_t offset_z=0;
+      |                ^~~~~~~~
+../Core/Src/main.c:93:16: warning: 'offset_y' defined but not used [-Wunused-variable]
+   93 | static int32_t offset_y=0;
+      |                ^~~~~~~~
+../Core/Src/main.c:92:16: warning: 'offset_x' defined but not used [-Wunused-variable]
+   92 | static int32_t offset_x=0;
+      |                ^~~~~~~~
+../Core/Src/main.c:90:14: warning: 'angleRate_z' defined but not used [-Wunused-variable]
+   90 | static float angleRate_z=0;
+      |              ^~~~~~~~~~~
+../Core/Src/main.c:89:14: warning: 'angleRate_y' defined but not used [-Wunused-variable]
+   89 | static float angleRate_y=0;
+      |              ^~~~~~~~~~~
+../Core/Src/main.c:88:14: warning: 'angleRate_x' defined but not used [-Wunused-variable]
+   88 | static float angleRate_x=0;
+      |              ^~~~~~~~~~~
+../Core/Src/main.c:75:29: warning: 'currentcalistate' defined but not used [-Wunused-variable]
+   75 | static L3GD20_caliStateType currentcalistate=L3GD20_collect_calibration_samples;
+      |                             ^~~~~~~~~~~~~~~~
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
+arm-none-eabi-gcc -o "L3GD20_Gyro_SPI.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Bazar\Desktop\STM32\STM32F411Discovery\My-STM32F411ve_Discovery\STM32F411Discovery_L3GD20_Gyro_SPI\L3GD20_Gyro_SPI\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="L3GD20_Gyro_SPI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: L3GD20_Gyro_SPI.elf
+ 
+arm-none-eabi-size  L3GD20_Gyro_SPI.elf 
+arm-none-eabi-objdump -h -S L3GD20_Gyro_SPI.elf  > "L3GD20_Gyro_SPI.list"
+   text	   data	    bss	    dec	    hex	filename
+  10620	     16	   1704	  12340	   3034	L3GD20_Gyro_SPI.elf
+Finished building: default.size.stdout
+ 
+Finished building: L3GD20_Gyro_SPI.list
+ 
+16:45:22 **** Incremental Build of configuration Debug for project L3GD20_Gyro_SPI ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'Gyro_L3GD20_ReadData':
+../Core/Src/main.c:340:33: error: invalid type argument of unary '*' (have 'int')
+  340 |         L3GD20_ReadData(&hspi1, *Gyro_Buffer[0], L3GD20_OUT_X_L_ADDR, 1);
+      |                                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:341:33: error: invalid type argument of unary '*' (have 'int')
+  341 |         L3GD20_ReadData(&hspi1, *Gyro_Buffer[1], L3GD20_OUT_X_H_ADDR, 1);
+      |                                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:342:44: warning: passing argument 2 of 'L3GD20_ReadData' makes pointer from integer without a cast [-Wint-conversion]
+  342 |         L3GD20_ReadData(&hspi1, Gyro_Buffer[2], L3GD20_OUT_Y_L_ADDR, 1);
+      |                                 ~~~~~~~~~~~^~~
+      |                                            |
+      |                                            uint8_t {aka unsigned char}
+In file included from ../Core/Src/main.c:24:
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:343:44: warning: passing argument 2 of 'L3GD20_ReadData' makes pointer from integer without a cast [-Wint-conversion]
+  343 |         L3GD20_ReadData(&hspi1, Gyro_Buffer[3], L3GD20_OUT_Y_H_ADDR, 1);
+      |                                 ~~~~~~~~~~~^~~
+      |                                            |
+      |                                            uint8_t {aka unsigned char}
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:344:44: warning: passing argument 2 of 'L3GD20_ReadData' makes pointer from integer without a cast [-Wint-conversion]
+  344 |         L3GD20_ReadData(&hspi1, Gyro_Buffer[4], L3GD20_OUT_Z_L_ADDR, 1);
+      |                                 ~~~~~~~~~~~^~~
+      |                                            |
+      |                                            uint8_t {aka unsigned char}
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:345:44: warning: passing argument 2 of 'L3GD20_ReadData' makes pointer from integer without a cast [-Wint-conversion]
+  345 |         L3GD20_ReadData(&hspi1, Gyro_Buffer[5], L3GD20_OUT_Z_H_ADDR, 1);
+      |                                 ~~~~~~~~~~~^~~
+      |                                            |
+      |                                            uint8_t {aka unsigned char}
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c: In function 'L3GD20_loop':
+../Core/Src/main.c:367:17: warning: unused variable 'tempSum_Z' [-Wunused-variable]
+  367 |         int32_t tempSum_Z = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:366:17: warning: unused variable 'tempSum_Y' [-Wunused-variable]
+  366 |         int32_t tempSum_Y = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:365:17: warning: unused variable 'tempSum_X' [-Wunused-variable]
+  365 |         int32_t tempSum_X = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:364:18: warning: unused variable 'windowPosition' [-Wunused-variable]
+  364 |         uint32_t windowPosition = 0;
+      |                  ^~~~~~~~~~~~~~
+../Core/Src/main.c:362:17: warning: unused variable 'averageWindow_Z' [-Wunused-variable]
+  362 |         int16_t averageWindow_Z[AVERAGE_WINDOW_SIZE] = {0};
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:361:17: warning: unused variable 'averageWindow_Y' [-Wunused-variable]
+  361 |         int16_t averageWindow_Y[AVERAGE_WINDOW_SIZE] = {0};
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:360:17: warning: unused variable 'averageWindow_X' [-Wunused-variable]
+  360 |         int16_t averageWindow_X[AVERAGE_WINDOW_SIZE] = {0};
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:358:15: warning: unused variable 'difftime' [-Wunused-variable]
+  358 |         float difftime=0;
+      |               ^~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:125:16: warning: 'calibrationBuffer_Z' defined but not used [-Wunused-variable]
+  125 | static int16_t calibrationBuffer_Z[CALIBRATION_BUFFER_LENGTH];
+      |                ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:124:16: warning: 'calibrationBuffer_Y' defined but not used [-Wunused-variable]
+  124 | static int16_t calibrationBuffer_Y[CALIBRATION_BUFFER_LENGTH];
+      |                ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:16: warning: 'calibrationBuffer_X' defined but not used [-Wunused-variable]
+  123 | static int16_t calibrationBuffer_X[CALIBRATION_BUFFER_LENGTH];
+      |                ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:110:16: warning: 'TempNoise_Z' defined but not used [-Wunused-variable]
+  110 | static int32_t TempNoise_Z = 0;
+      |                ^~~~~~~~~~~
+../Core/Src/main.c:109:16: warning: 'TempNoise_Y' defined but not used [-Wunused-variable]
+  109 | static int32_t TempNoise_Y = 0;
+      |                ^~~~~~~~~~~
+../Core/Src/main.c:108:16: warning: 'TempNoise_X' defined but not used [-Wunused-variable]
+  108 | static int32_t TempNoise_X = 0;
+      |                ^~~~~~~~~~~
+../Core/Src/main.c:106:14: warning: 'LastAngleRate_Z' defined but not used [-Wunused-variable]
+  106 | static float LastAngleRate_Z = 0;
+      |              ^~~~~~~~~~~~~~~
+../Core/Src/main.c:105:14: warning: 'LastAngleRate_Y' defined but not used [-Wunused-variable]
+  105 | static float LastAngleRate_Y = 0;
+      |              ^~~~~~~~~~~~~~~
+../Core/Src/main.c:104:14: warning: 'LastAngleRate_X' defined but not used [-Wunused-variable]
+  104 | static float LastAngleRate_X = 0;
+      |              ^~~~~~~~~~~~~~~
+../Core/Src/main.c:102:14: warning: 'Angle_Z' defined but not used [-Wunused-variable]
+  102 | static float Angle_Z = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:101:14: warning: 'Angle_Y' defined but not used [-Wunused-variable]
+  101 | static float Angle_Y = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:100:14: warning: 'Angle_X' defined but not used [-Wunused-variable]
+  100 | static float Angle_X = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:98:14: warning: 'Noise_Z' defined but not used [-Wunused-variable]
+   98 | static float Noise_Z = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:97:14: warning: 'Noise_Y' defined but not used [-Wunused-variable]
+   97 | static float Noise_Y = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:96:14: warning: 'Noise_X' defined but not used [-Wunused-variable]
+   96 | static float Noise_X = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:94:16: warning: 'offset_z' defined but not used [-Wunused-variable]
+   94 | static int32_t offset_z=0;
+      |                ^~~~~~~~
+../Core/Src/main.c:93:16: warning: 'offset_y' defined but not used [-Wunused-variable]
+   93 | static int32_t offset_y=0;
+      |                ^~~~~~~~
+../Core/Src/main.c:92:16: warning: 'offset_x' defined but not used [-Wunused-variable]
+   92 | static int32_t offset_x=0;
+      |                ^~~~~~~~
+../Core/Src/main.c:90:14: warning: 'angleRate_z' defined but not used [-Wunused-variable]
+   90 | static float angleRate_z=0;
+      |              ^~~~~~~~~~~
+../Core/Src/main.c:89:14: warning: 'angleRate_y' defined but not used [-Wunused-variable]
+   89 | static float angleRate_y=0;
+      |              ^~~~~~~~~~~
+../Core/Src/main.c:88:14: warning: 'angleRate_x' defined but not used [-Wunused-variable]
+   88 | static float angleRate_x=0;
+      |              ^~~~~~~~~~~
+../Core/Src/main.c:75:29: warning: 'currentcalistate' defined but not used [-Wunused-variable]
+   75 | static L3GD20_caliStateType currentcalistate=L3GD20_collect_calibration_samples;
+      |                             ^~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+16:45:35 **** Incremental Build of configuration Debug for project L3GD20_Gyro_SPI ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'Gyro_L3GD20_ReadData':
+../Core/Src/main.c:340:33: warning: passing argument 2 of 'L3GD20_ReadData' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  340 |         L3GD20_ReadData(&hspi1, &Gyro_Buffer[0], L3GD20_OUT_X_L_ADDR, 1);
+      |                                 ^~~~~~~~~~~~~~~
+In file included from ../Core/Src/main.c:24:
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:341:33: warning: passing argument 2 of 'L3GD20_ReadData' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  341 |         L3GD20_ReadData(&hspi1, &Gyro_Buffer[1], L3GD20_OUT_X_H_ADDR, 1);
+      |                                 ^~~~~~~~~~~~~~~
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:342:44: warning: passing argument 2 of 'L3GD20_ReadData' makes pointer from integer without a cast [-Wint-conversion]
+  342 |         L3GD20_ReadData(&hspi1, Gyro_Buffer[2], L3GD20_OUT_Y_L_ADDR, 1);
+      |                                 ~~~~~~~~~~~^~~
+      |                                            |
+      |                                            uint8_t {aka unsigned char}
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:343:44: warning: passing argument 2 of 'L3GD20_ReadData' makes pointer from integer without a cast [-Wint-conversion]
+  343 |         L3GD20_ReadData(&hspi1, Gyro_Buffer[3], L3GD20_OUT_Y_H_ADDR, 1);
+      |                                 ~~~~~~~~~~~^~~
+      |                                            |
+      |                                            uint8_t {aka unsigned char}
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:344:44: warning: passing argument 2 of 'L3GD20_ReadData' makes pointer from integer without a cast [-Wint-conversion]
+  344 |         L3GD20_ReadData(&hspi1, Gyro_Buffer[4], L3GD20_OUT_Z_L_ADDR, 1);
+      |                                 ~~~~~~~~~~~^~~
+      |                                            |
+      |                                            uint8_t {aka unsigned char}
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:345:44: warning: passing argument 2 of 'L3GD20_ReadData' makes pointer from integer without a cast [-Wint-conversion]
+  345 |         L3GD20_ReadData(&hspi1, Gyro_Buffer[5], L3GD20_OUT_Z_H_ADDR, 1);
+      |                                 ~~~~~~~~~~~^~~
+      |                                            |
+      |                                            uint8_t {aka unsigned char}
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c: In function 'L3GD20_loop':
+../Core/Src/main.c:367:17: warning: unused variable 'tempSum_Z' [-Wunused-variable]
+  367 |         int32_t tempSum_Z = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:366:17: warning: unused variable 'tempSum_Y' [-Wunused-variable]
+  366 |         int32_t tempSum_Y = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:365:17: warning: unused variable 'tempSum_X' [-Wunused-variable]
+  365 |         int32_t tempSum_X = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:364:18: warning: unused variable 'windowPosition' [-Wunused-variable]
+  364 |         uint32_t windowPosition = 0;
+      |                  ^~~~~~~~~~~~~~
+../Core/Src/main.c:362:17: warning: unused variable 'averageWindow_Z' [-Wunused-variable]
+  362 |         int16_t averageWindow_Z[AVERAGE_WINDOW_SIZE] = {0};
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:361:17: warning: unused variable 'averageWindow_Y' [-Wunused-variable]
+  361 |         int16_t averageWindow_Y[AVERAGE_WINDOW_SIZE] = {0};
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:360:17: warning: unused variable 'averageWindow_X' [-Wunused-variable]
+  360 |         int16_t averageWindow_X[AVERAGE_WINDOW_SIZE] = {0};
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:358:15: warning: unused variable 'difftime' [-Wunused-variable]
+  358 |         float difftime=0;
+      |               ^~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:125:16: warning: 'calibrationBuffer_Z' defined but not used [-Wunused-variable]
+  125 | static int16_t calibrationBuffer_Z[CALIBRATION_BUFFER_LENGTH];
+      |                ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:124:16: warning: 'calibrationBuffer_Y' defined but not used [-Wunused-variable]
+  124 | static int16_t calibrationBuffer_Y[CALIBRATION_BUFFER_LENGTH];
+      |                ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:16: warning: 'calibrationBuffer_X' defined but not used [-Wunused-variable]
+  123 | static int16_t calibrationBuffer_X[CALIBRATION_BUFFER_LENGTH];
+      |                ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:110:16: warning: 'TempNoise_Z' defined but not used [-Wunused-variable]
+  110 | static int32_t TempNoise_Z = 0;
+      |                ^~~~~~~~~~~
+../Core/Src/main.c:109:16: warning: 'TempNoise_Y' defined but not used [-Wunused-variable]
+  109 | static int32_t TempNoise_Y = 0;
+      |                ^~~~~~~~~~~
+../Core/Src/main.c:108:16: warning: 'TempNoise_X' defined but not used [-Wunused-variable]
+  108 | static int32_t TempNoise_X = 0;
+      |                ^~~~~~~~~~~
+../Core/Src/main.c:106:14: warning: 'LastAngleRate_Z' defined but not used [-Wunused-variable]
+  106 | static float LastAngleRate_Z = 0;
+      |              ^~~~~~~~~~~~~~~
+../Core/Src/main.c:105:14: warning: 'LastAngleRate_Y' defined but not used [-Wunused-variable]
+  105 | static float LastAngleRate_Y = 0;
+      |              ^~~~~~~~~~~~~~~
+../Core/Src/main.c:104:14: warning: 'LastAngleRate_X' defined but not used [-Wunused-variable]
+  104 | static float LastAngleRate_X = 0;
+      |              ^~~~~~~~~~~~~~~
+../Core/Src/main.c:102:14: warning: 'Angle_Z' defined but not used [-Wunused-variable]
+  102 | static float Angle_Z = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:101:14: warning: 'Angle_Y' defined but not used [-Wunused-variable]
+  101 | static float Angle_Y = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:100:14: warning: 'Angle_X' defined but not used [-Wunused-variable]
+  100 | static float Angle_X = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:98:14: warning: 'Noise_Z' defined but not used [-Wunused-variable]
+   98 | static float Noise_Z = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:97:14: warning: 'Noise_Y' defined but not used [-Wunused-variable]
+   97 | static float Noise_Y = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:96:14: warning: 'Noise_X' defined but not used [-Wunused-variable]
+   96 | static float Noise_X = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:94:16: warning: 'offset_z' defined but not used [-Wunused-variable]
+   94 | static int32_t offset_z=0;
+      |                ^~~~~~~~
+../Core/Src/main.c:93:16: warning: 'offset_y' defined but not used [-Wunused-variable]
+   93 | static int32_t offset_y=0;
+      |                ^~~~~~~~
+../Core/Src/main.c:92:16: warning: 'offset_x' defined but not used [-Wunused-variable]
+   92 | static int32_t offset_x=0;
+      |                ^~~~~~~~
+../Core/Src/main.c:90:14: warning: 'angleRate_z' defined but not used [-Wunused-variable]
+   90 | static float angleRate_z=0;
+      |              ^~~~~~~~~~~
+../Core/Src/main.c:89:14: warning: 'angleRate_y' defined but not used [-Wunused-variable]
+   89 | static float angleRate_y=0;
+      |              ^~~~~~~~~~~
+../Core/Src/main.c:88:14: warning: 'angleRate_x' defined but not used [-Wunused-variable]
+   88 | static float angleRate_x=0;
+      |              ^~~~~~~~~~~
+../Core/Src/main.c:75:29: warning: 'currentcalistate' defined but not used [-Wunused-variable]
+   75 | static L3GD20_caliStateType currentcalistate=L3GD20_collect_calibration_samples;
+      |                             ^~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "L3GD20_Gyro_SPI.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Bazar\Desktop\STM32\STM32F411Discovery\My-STM32F411ve_Discovery\STM32F411Discovery_L3GD20_Gyro_SPI\L3GD20_Gyro_SPI\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="L3GD20_Gyro_SPI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: L3GD20_Gyro_SPI.elf
+ 
+arm-none-eabi-size  L3GD20_Gyro_SPI.elf 
+arm-none-eabi-objdump -h -S L3GD20_Gyro_SPI.elf  > "L3GD20_Gyro_SPI.list"
+   text	   data	    bss	    dec	    hex	filename
+  10620	     16	   1704	  12340	   3034	L3GD20_Gyro_SPI.elf
+Finished building: default.size.stdout
+ 
+Finished building: L3GD20_Gyro_SPI.list
+ 
+16:45:59 **** Incremental Build of configuration Debug for project L3GD20_Gyro_SPI ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'Gyro_L3GD20_ReadData':
+../Core/Src/main.c:340:44: warning: passing argument 2 of 'L3GD20_ReadData' makes pointer from integer without a cast [-Wint-conversion]
+  340 |         L3GD20_ReadData(&hspi1, Gyro_Buffer[0], L3GD20_OUT_X_L_ADDR, 1);
+      |                                 ~~~~~~~~~~~^~~
+      |                                            |
+      |                                            uint8_t {aka unsigned char}
+In file included from ../Core/Src/main.c:24:
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:341:44: warning: passing argument 2 of 'L3GD20_ReadData' makes pointer from integer without a cast [-Wint-conversion]
+  341 |         L3GD20_ReadData(&hspi1, Gyro_Buffer[1], L3GD20_OUT_X_H_ADDR, 1);
+      |                                 ~~~~~~~~~~~^~~
+      |                                            |
+      |                                            uint8_t {aka unsigned char}
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:342:44: warning: passing argument 2 of 'L3GD20_ReadData' makes pointer from integer without a cast [-Wint-conversion]
+  342 |         L3GD20_ReadData(&hspi1, Gyro_Buffer[2], L3GD20_OUT_Y_L_ADDR, 1);
+      |                                 ~~~~~~~~~~~^~~
+      |                                            |
+      |                                            uint8_t {aka unsigned char}
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:343:44: warning: passing argument 2 of 'L3GD20_ReadData' makes pointer from integer without a cast [-Wint-conversion]
+  343 |         L3GD20_ReadData(&hspi1, Gyro_Buffer[3], L3GD20_OUT_Y_H_ADDR, 1);
+      |                                 ~~~~~~~~~~~^~~
+      |                                            |
+      |                                            uint8_t {aka unsigned char}
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:344:44: warning: passing argument 2 of 'L3GD20_ReadData' makes pointer from integer without a cast [-Wint-conversion]
+  344 |         L3GD20_ReadData(&hspi1, Gyro_Buffer[4], L3GD20_OUT_Z_L_ADDR, 1);
+      |                                 ~~~~~~~~~~~^~~
+      |                                            |
+      |                                            uint8_t {aka unsigned char}
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:345:44: warning: passing argument 2 of 'L3GD20_ReadData' makes pointer from integer without a cast [-Wint-conversion]
+  345 |         L3GD20_ReadData(&hspi1, Gyro_Buffer[5], L3GD20_OUT_Z_H_ADDR, 1);
+      |                                 ~~~~~~~~~~~^~~
+      |                                            |
+      |                                            uint8_t {aka unsigned char}
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c: In function 'L3GD20_loop':
+../Core/Src/main.c:367:17: warning: unused variable 'tempSum_Z' [-Wunused-variable]
+  367 |         int32_t tempSum_Z = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:366:17: warning: unused variable 'tempSum_Y' [-Wunused-variable]
+  366 |         int32_t tempSum_Y = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:365:17: warning: unused variable 'tempSum_X' [-Wunused-variable]
+  365 |         int32_t tempSum_X = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:364:18: warning: unused variable 'windowPosition' [-Wunused-variable]
+  364 |         uint32_t windowPosition = 0;
+      |                  ^~~~~~~~~~~~~~
+../Core/Src/main.c:362:17: warning: unused variable 'averageWindow_Z' [-Wunused-variable]
+  362 |         int16_t averageWindow_Z[AVERAGE_WINDOW_SIZE] = {0};
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:361:17: warning: unused variable 'averageWindow_Y' [-Wunused-variable]
+  361 |         int16_t averageWindow_Y[AVERAGE_WINDOW_SIZE] = {0};
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:360:17: warning: unused variable 'averageWindow_X' [-Wunused-variable]
+  360 |         int16_t averageWindow_X[AVERAGE_WINDOW_SIZE] = {0};
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:358:15: warning: unused variable 'difftime' [-Wunused-variable]
+  358 |         float difftime=0;
+      |               ^~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:125:16: warning: 'calibrationBuffer_Z' defined but not used [-Wunused-variable]
+  125 | static int16_t calibrationBuffer_Z[CALIBRATION_BUFFER_LENGTH];
+      |                ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:124:16: warning: 'calibrationBuffer_Y' defined but not used [-Wunused-variable]
+  124 | static int16_t calibrationBuffer_Y[CALIBRATION_BUFFER_LENGTH];
+      |                ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:16: warning: 'calibrationBuffer_X' defined but not used [-Wunused-variable]
+  123 | static int16_t calibrationBuffer_X[CALIBRATION_BUFFER_LENGTH];
+      |                ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:110:16: warning: 'TempNoise_Z' defined but not used [-Wunused-variable]
+  110 | static int32_t TempNoise_Z = 0;
+      |                ^~~~~~~~~~~
+../Core/Src/main.c:109:16: warning: 'TempNoise_Y' defined but not used [-Wunused-variable]
+  109 | static int32_t TempNoise_Y = 0;
+      |                ^~~~~~~~~~~
+../Core/Src/main.c:108:16: warning: 'TempNoise_X' defined but not used [-Wunused-variable]
+  108 | static int32_t TempNoise_X = 0;
+      |                ^~~~~~~~~~~
+../Core/Src/main.c:106:14: warning: 'LastAngleRate_Z' defined but not used [-Wunused-variable]
+  106 | static float LastAngleRate_Z = 0;
+      |              ^~~~~~~~~~~~~~~
+../Core/Src/main.c:105:14: warning: 'LastAngleRate_Y' defined but not used [-Wunused-variable]
+  105 | static float LastAngleRate_Y = 0;
+      |              ^~~~~~~~~~~~~~~
+../Core/Src/main.c:104:14: warning: 'LastAngleRate_X' defined but not used [-Wunused-variable]
+  104 | static float LastAngleRate_X = 0;
+      |              ^~~~~~~~~~~~~~~
+../Core/Src/main.c:102:14: warning: 'Angle_Z' defined but not used [-Wunused-variable]
+  102 | static float Angle_Z = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:101:14: warning: 'Angle_Y' defined but not used [-Wunused-variable]
+  101 | static float Angle_Y = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:100:14: warning: 'Angle_X' defined but not used [-Wunused-variable]
+  100 | static float Angle_X = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:98:14: warning: 'Noise_Z' defined but not used [-Wunused-variable]
+   98 | static float Noise_Z = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:97:14: warning: 'Noise_Y' defined but not used [-Wunused-variable]
+   97 | static float Noise_Y = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:96:14: warning: 'Noise_X' defined but not used [-Wunused-variable]
+   96 | static float Noise_X = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:94:16: warning: 'offset_z' defined but not used [-Wunused-variable]
+   94 | static int32_t offset_z=0;
+      |                ^~~~~~~~
+../Core/Src/main.c:93:16: warning: 'offset_y' defined but not used [-Wunused-variable]
+   93 | static int32_t offset_y=0;
+      |                ^~~~~~~~
+../Core/Src/main.c:92:16: warning: 'offset_x' defined but not used [-Wunused-variable]
+   92 | static int32_t offset_x=0;
+      |                ^~~~~~~~
+../Core/Src/main.c:90:14: warning: 'angleRate_z' defined but not used [-Wunused-variable]
+   90 | static float angleRate_z=0;
+      |              ^~~~~~~~~~~
+../Core/Src/main.c:89:14: warning: 'angleRate_y' defined but not used [-Wunused-variable]
+   89 | static float angleRate_y=0;
+      |              ^~~~~~~~~~~
+../Core/Src/main.c:88:14: warning: 'angleRate_x' defined but not used [-Wunused-variable]
+   88 | static float angleRate_x=0;
+      |              ^~~~~~~~~~~
+../Core/Src/main.c:75:29: warning: 'currentcalistate' defined but not used [-Wunused-variable]
+   75 | static L3GD20_caliStateType currentcalistate=L3GD20_collect_calibration_samples;
+      |                             ^~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "L3GD20_Gyro_SPI.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Bazar\Desktop\STM32\STM32F411Discovery\My-STM32F411ve_Discovery\STM32F411Discovery_L3GD20_Gyro_SPI\L3GD20_Gyro_SPI\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="L3GD20_Gyro_SPI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: L3GD20_Gyro_SPI.elf
+ 
+arm-none-eabi-size  L3GD20_Gyro_SPI.elf 
+arm-none-eabi-objdump -h -S L3GD20_Gyro_SPI.elf  > "L3GD20_Gyro_SPI.list"
+   text	   data	    bss	    dec	    hex	filename
+  10620	     16	   1704	  12340	   3034	L3GD20_Gyro_SPI.elf
+Finished building: default.size.stdout
+ 
+Finished building: L3GD20_Gyro_SPI.list
+ 
+16:47:03 **** Incremental Build of configuration Debug for project L3GD20_Gyro_SPI ****
+make -j4 all 
+arm-none-eabi-size  L3GD20_Gyro_SPI.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10620	     16	   1704	  12340	   3034	L3GD20_Gyro_SPI.elf
+Finished building: default.size.stdout
+ 
+16:49:30 **** Incremental Build of configuration Debug for project L3GD20_Gyro_SPI ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'Gyro_L3GD20_ReadData':
+../Core/Src/main.c:340:44: warning: passing argument 2 of 'L3GD20_ReadData' makes pointer from integer without a cast [-Wint-conversion]
+  340 |         L3GD20_ReadData(&hspi1, Gyro_Buffer[0], L3GD20_OUT_X_L_ADDR, 1);
+      |                                 ~~~~~~~~~~~^~~
+      |                                            |
+      |                                            uint8_t {aka unsigned char}
+In file included from ../Core/Src/main.c:24:
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:341:44: warning: passing argument 2 of 'L3GD20_ReadData' makes pointer from integer without a cast [-Wint-conversion]
+  341 |         L3GD20_ReadData(&hspi1, Gyro_Buffer[1], L3GD20_OUT_X_H_ADDR, 1);
+      |                                 ~~~~~~~~~~~^~~
+      |                                            |
+      |                                            uint8_t {aka unsigned char}
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:342:44: warning: passing argument 2 of 'L3GD20_ReadData' makes pointer from integer without a cast [-Wint-conversion]
+  342 |         L3GD20_ReadData(&hspi1, Gyro_Buffer[2], L3GD20_OUT_Y_L_ADDR, 1);
+      |                                 ~~~~~~~~~~~^~~
+      |                                            |
+      |                                            uint8_t {aka unsigned char}
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:343:44: warning: passing argument 2 of 'L3GD20_ReadData' makes pointer from integer without a cast [-Wint-conversion]
+  343 |         L3GD20_ReadData(&hspi1, Gyro_Buffer[3], L3GD20_OUT_Y_H_ADDR, 1);
+      |                                 ~~~~~~~~~~~^~~
+      |                                            |
+      |                                            uint8_t {aka unsigned char}
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:344:44: warning: passing argument 2 of 'L3GD20_ReadData' makes pointer from integer without a cast [-Wint-conversion]
+  344 |         L3GD20_ReadData(&hspi1, Gyro_Buffer[4], L3GD20_OUT_Z_L_ADDR, 1);
+      |                                 ~~~~~~~~~~~^~~
+      |                                            |
+      |                                            uint8_t {aka unsigned char}
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:345:44: warning: passing argument 2 of 'L3GD20_ReadData' makes pointer from integer without a cast [-Wint-conversion]
+  345 |         L3GD20_ReadData(&hspi1, Gyro_Buffer[5], L3GD20_OUT_Z_H_ADDR, 1);
+      |                                 ~~~~~~~~~~~^~~
+      |                                            |
+      |                                            uint8_t {aka unsigned char}
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c: In function 'L3GD20_loop':
+../Core/Src/main.c:367:17: warning: unused variable 'tempSum_Z' [-Wunused-variable]
+  367 |         int32_t tempSum_Z = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:366:17: warning: unused variable 'tempSum_Y' [-Wunused-variable]
+  366 |         int32_t tempSum_Y = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:365:17: warning: unused variable 'tempSum_X' [-Wunused-variable]
+  365 |         int32_t tempSum_X = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:364:18: warning: unused variable 'windowPosition' [-Wunused-variable]
+  364 |         uint32_t windowPosition = 0;
+      |                  ^~~~~~~~~~~~~~
+../Core/Src/main.c:362:17: warning: unused variable 'averageWindow_Z' [-Wunused-variable]
+  362 |         int16_t averageWindow_Z[AVERAGE_WINDOW_SIZE] = {0};
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:361:17: warning: unused variable 'averageWindow_Y' [-Wunused-variable]
+  361 |         int16_t averageWindow_Y[AVERAGE_WINDOW_SIZE] = {0};
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:360:17: warning: unused variable 'averageWindow_X' [-Wunused-variable]
+  360 |         int16_t averageWindow_X[AVERAGE_WINDOW_SIZE] = {0};
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:358:15: warning: unused variable 'difftime' [-Wunused-variable]
+  358 |         float difftime=0;
+      |               ^~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:125:16: warning: 'calibrationBuffer_Z' defined but not used [-Wunused-variable]
+  125 | static int16_t calibrationBuffer_Z[CALIBRATION_BUFFER_LENGTH];
+      |                ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:124:16: warning: 'calibrationBuffer_Y' defined but not used [-Wunused-variable]
+  124 | static int16_t calibrationBuffer_Y[CALIBRATION_BUFFER_LENGTH];
+      |                ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:16: warning: 'calibrationBuffer_X' defined but not used [-Wunused-variable]
+  123 | static int16_t calibrationBuffer_X[CALIBRATION_BUFFER_LENGTH];
+      |                ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:110:16: warning: 'TempNoise_Z' defined but not used [-Wunused-variable]
+  110 | static int32_t TempNoise_Z = 0;
+      |                ^~~~~~~~~~~
+../Core/Src/main.c:109:16: warning: 'TempNoise_Y' defined but not used [-Wunused-variable]
+  109 | static int32_t TempNoise_Y = 0;
+      |                ^~~~~~~~~~~
+../Core/Src/main.c:108:16: warning: 'TempNoise_X' defined but not used [-Wunused-variable]
+  108 | static int32_t TempNoise_X = 0;
+      |                ^~~~~~~~~~~
+../Core/Src/main.c:106:14: warning: 'LastAngleRate_Z' defined but not used [-Wunused-variable]
+  106 | static float LastAngleRate_Z = 0;
+      |              ^~~~~~~~~~~~~~~
+../Core/Src/main.c:105:14: warning: 'LastAngleRate_Y' defined but not used [-Wunused-variable]
+  105 | static float LastAngleRate_Y = 0;
+      |              ^~~~~~~~~~~~~~~
+../Core/Src/main.c:104:14: warning: 'LastAngleRate_X' defined but not used [-Wunused-variable]
+  104 | static float LastAngleRate_X = 0;
+      |              ^~~~~~~~~~~~~~~
+../Core/Src/main.c:102:14: warning: 'Angle_Z' defined but not used [-Wunused-variable]
+  102 | static float Angle_Z = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:101:14: warning: 'Angle_Y' defined but not used [-Wunused-variable]
+  101 | static float Angle_Y = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:100:14: warning: 'Angle_X' defined but not used [-Wunused-variable]
+  100 | static float Angle_X = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:98:14: warning: 'Noise_Z' defined but not used [-Wunused-variable]
+   98 | static float Noise_Z = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:97:14: warning: 'Noise_Y' defined but not used [-Wunused-variable]
+   97 | static float Noise_Y = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:96:14: warning: 'Noise_X' defined but not used [-Wunused-variable]
+   96 | static float Noise_X = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:94:16: warning: 'offset_z' defined but not used [-Wunused-variable]
+   94 | static int32_t offset_z=0;
+      |                ^~~~~~~~
+../Core/Src/main.c:93:16: warning: 'offset_y' defined but not used [-Wunused-variable]
+   93 | static int32_t offset_y=0;
+      |                ^~~~~~~~
+../Core/Src/main.c:92:16: warning: 'offset_x' defined but not used [-Wunused-variable]
+   92 | static int32_t offset_x=0;
+      |                ^~~~~~~~
+../Core/Src/main.c:90:14: warning: 'angleRate_z' defined but not used [-Wunused-variable]
+   90 | static float angleRate_z=0;
+      |              ^~~~~~~~~~~
+../Core/Src/main.c:89:14: warning: 'angleRate_y' defined but not used [-Wunused-variable]
+   89 | static float angleRate_y=0;
+      |              ^~~~~~~~~~~
+../Core/Src/main.c:88:14: warning: 'angleRate_x' defined but not used [-Wunused-variable]
+   88 | static float angleRate_x=0;
+      |              ^~~~~~~~~~~
+../Core/Src/main.c:75:29: warning: 'currentcalistate' defined but not used [-Wunused-variable]
+   75 | static L3GD20_caliStateType currentcalistate=L3GD20_collect_calibration_samples;
+      |                             ^~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "L3GD20_Gyro_SPI.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Bazar\Desktop\STM32\STM32F411Discovery\My-STM32F411ve_Discovery\STM32F411Discovery_L3GD20_Gyro_SPI\L3GD20_Gyro_SPI\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="L3GD20_Gyro_SPI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: L3GD20_Gyro_SPI.elf
+ 
+arm-none-eabi-size  L3GD20_Gyro_SPI.elf 
+arm-none-eabi-objdump -h -S L3GD20_Gyro_SPI.elf  > "L3GD20_Gyro_SPI.list"
+   text	   data	    bss	    dec	    hex	filename
+  10264	     12	   1708	  11984	   2ed0	L3GD20_Gyro_SPI.elf
+Finished building: default.size.stdout
+ 
+Finished building: L3GD20_Gyro_SPI.list
+ 
+16:50:46 **** Incremental Build of configuration Debug for project L3GD20_Gyro_SPI ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'Gyro_L3GD20_ReadData':
+../Core/Src/main.c:340:33: warning: passing argument 2 of 'L3GD20_ReadData' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  340 |         L3GD20_ReadData(&hspi1, &Gyro_Buffer[0], L3GD20_OUT_X_L_ADDR, 1);
+      |                                 ^~~~~~~~~~~~~~~
+In file included from ../Core/Src/main.c:24:
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:341:33: warning: passing argument 2 of 'L3GD20_ReadData' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  341 |         L3GD20_ReadData(&hspi1, &Gyro_Buffer[1], L3GD20_OUT_X_H_ADDR, 1);
+      |                                 ^~~~~~~~~~~~~~~
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:342:33: warning: passing argument 2 of 'L3GD20_ReadData' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  342 |         L3GD20_ReadData(&hspi1, &Gyro_Buffer[2], L3GD20_OUT_Y_L_ADDR, 1);
+      |                                 ^~~~~~~~~~~~~~~
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:343:33: warning: passing argument 2 of 'L3GD20_ReadData' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  343 |         L3GD20_ReadData(&hspi1, &Gyro_Buffer[3], L3GD20_OUT_Y_H_ADDR, 1);
+      |                                 ^~~~~~~~~~~~~~~
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:344:33: warning: passing argument 2 of 'L3GD20_ReadData' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  344 |         L3GD20_ReadData(&hspi1, &Gyro_Buffer[4], L3GD20_OUT_Z_L_ADDR, 1);
+      |                                 ^~~~~~~~~~~~~~~
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:345:33: warning: passing argument 2 of 'L3GD20_ReadData' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  345 |         L3GD20_ReadData(&hspi1, &Gyro_Buffer[5], L3GD20_OUT_Z_H_ADDR, 1);
+      |                                 ^~~~~~~~~~~~~~~
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c: In function 'L3GD20_loop':
+../Core/Src/main.c:367:17: warning: unused variable 'tempSum_Z' [-Wunused-variable]
+  367 |         int32_t tempSum_Z = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:366:17: warning: unused variable 'tempSum_Y' [-Wunused-variable]
+  366 |         int32_t tempSum_Y = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:365:17: warning: unused variable 'tempSum_X' [-Wunused-variable]
+  365 |         int32_t tempSum_X = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:364:18: warning: unused variable 'windowPosition' [-Wunused-variable]
+  364 |         uint32_t windowPosition = 0;
+      |                  ^~~~~~~~~~~~~~
+../Core/Src/main.c:362:17: warning: unused variable 'averageWindow_Z' [-Wunused-variable]
+  362 |         int16_t averageWindow_Z[AVERAGE_WINDOW_SIZE] = {0};
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:361:17: warning: unused variable 'averageWindow_Y' [-Wunused-variable]
+  361 |         int16_t averageWindow_Y[AVERAGE_WINDOW_SIZE] = {0};
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:360:17: warning: unused variable 'averageWindow_X' [-Wunused-variable]
+  360 |         int16_t averageWindow_X[AVERAGE_WINDOW_SIZE] = {0};
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:358:15: warning: unused variable 'difftime' [-Wunused-variable]
+  358 |         float difftime=0;
+      |               ^~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:125:16: warning: 'calibrationBuffer_Z' defined but not used [-Wunused-variable]
+  125 | static int16_t calibrationBuffer_Z[CALIBRATION_BUFFER_LENGTH];
+      |                ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:124:16: warning: 'calibrationBuffer_Y' defined but not used [-Wunused-variable]
+  124 | static int16_t calibrationBuffer_Y[CALIBRATION_BUFFER_LENGTH];
+      |                ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:16: warning: 'calibrationBuffer_X' defined but not used [-Wunused-variable]
+  123 | static int16_t calibrationBuffer_X[CALIBRATION_BUFFER_LENGTH];
+      |                ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:110:16: warning: 'TempNoise_Z' defined but not used [-Wunused-variable]
+  110 | static int32_t TempNoise_Z = 0;
+      |                ^~~~~~~~~~~
+../Core/Src/main.c:109:16: warning: 'TempNoise_Y' defined but not used [-Wunused-variable]
+  109 | static int32_t TempNoise_Y = 0;
+      |                ^~~~~~~~~~~
+../Core/Src/main.c:108:16: warning: 'TempNoise_X' defined but not used [-Wunused-variable]
+  108 | static int32_t TempNoise_X = 0;
+      |                ^~~~~~~~~~~
+../Core/Src/main.c:106:14: warning: 'LastAngleRate_Z' defined but not used [-Wunused-variable]
+  106 | static float LastAngleRate_Z = 0;
+      |              ^~~~~~~~~~~~~~~
+../Core/Src/main.c:105:14: warning: 'LastAngleRate_Y' defined but not used [-Wunused-variable]
+  105 | static float LastAngleRate_Y = 0;
+      |              ^~~~~~~~~~~~~~~
+../Core/Src/main.c:104:14: warning: 'LastAngleRate_X' defined but not used [-Wunused-variable]
+  104 | static float LastAngleRate_X = 0;
+      |              ^~~~~~~~~~~~~~~
+../Core/Src/main.c:102:14: warning: 'Angle_Z' defined but not used [-Wunused-variable]
+  102 | static float Angle_Z = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:101:14: warning: 'Angle_Y' defined but not used [-Wunused-variable]
+  101 | static float Angle_Y = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:100:14: warning: 'Angle_X' defined but not used [-Wunused-variable]
+  100 | static float Angle_X = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:98:14: warning: 'Noise_Z' defined but not used [-Wunused-variable]
+   98 | static float Noise_Z = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:97:14: warning: 'Noise_Y' defined but not used [-Wunused-variable]
+   97 | static float Noise_Y = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:96:14: warning: 'Noise_X' defined but not used [-Wunused-variable]
+   96 | static float Noise_X = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:94:16: warning: 'offset_z' defined but not used [-Wunused-variable]
+   94 | static int32_t offset_z=0;
+      |                ^~~~~~~~
+../Core/Src/main.c:93:16: warning: 'offset_y' defined but not used [-Wunused-variable]
+   93 | static int32_t offset_y=0;
+      |                ^~~~~~~~
+../Core/Src/main.c:92:16: warning: 'offset_x' defined but not used [-Wunused-variable]
+   92 | static int32_t offset_x=0;
+      |                ^~~~~~~~
+../Core/Src/main.c:90:14: warning: 'angleRate_z' defined but not used [-Wunused-variable]
+   90 | static float angleRate_z=0;
+      |              ^~~~~~~~~~~
+../Core/Src/main.c:89:14: warning: 'angleRate_y' defined but not used [-Wunused-variable]
+   89 | static float angleRate_y=0;
+      |              ^~~~~~~~~~~
+../Core/Src/main.c:88:14: warning: 'angleRate_x' defined but not used [-Wunused-variable]
+   88 | static float angleRate_x=0;
+      |              ^~~~~~~~~~~
+../Core/Src/main.c:75:29: warning: 'currentcalistate' defined but not used [-Wunused-variable]
+   75 | static L3GD20_caliStateType currentcalistate=L3GD20_collect_calibration_samples;
+      |                             ^~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "L3GD20_Gyro_SPI.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Bazar\Desktop\STM32\STM32F411Discovery\My-STM32F411ve_Discovery\STM32F411Discovery_L3GD20_Gyro_SPI\L3GD20_Gyro_SPI\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="L3GD20_Gyro_SPI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: L3GD20_Gyro_SPI.elf
+ 
+arm-none-eabi-size  L3GD20_Gyro_SPI.elf 
+arm-none-eabi-objdump -h -S L3GD20_Gyro_SPI.elf  > "L3GD20_Gyro_SPI.list"
+   text	   data	    bss	    dec	    hex	filename
+  10248	     12	   1708	  11968	   2ec0	L3GD20_Gyro_SPI.elf
+Finished building: default.size.stdout
+ 
+Finished building: L3GD20_Gyro_SPI.list
+ 
+16:52:12 **** Incremental Build of configuration Debug for project L3GD20_Gyro_SPI ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'Gyro_L3GD20_ReadData':
+../Core/Src/main.c:340:33: warning: passing argument 2 of 'L3GD20_ReadData' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  340 |         L3GD20_ReadData(&hspi1, &Gyro_Buffer[0], L3GD20_OUT_X_L_ADDR, 6);
+      |                                 ^~~~~~~~~~~~~~~
+In file included from ../Core/Src/main.c:24:
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c: In function 'L3GD20_loop':
+../Core/Src/main.c:367:17: warning: unused variable 'tempSum_Z' [-Wunused-variable]
+  367 |         int32_t tempSum_Z = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:366:17: warning: unused variable 'tempSum_Y' [-Wunused-variable]
+  366 |         int32_t tempSum_Y = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:365:17: warning: unused variable 'tempSum_X' [-Wunused-variable]
+  365 |         int32_t tempSum_X = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:364:18: warning: unused variable 'windowPosition' [-Wunused-variable]
+  364 |         uint32_t windowPosition = 0;
+      |                  ^~~~~~~~~~~~~~
+../Core/Src/main.c:362:17: warning: unused variable 'averageWindow_Z' [-Wunused-variable]
+  362 |         int16_t averageWindow_Z[AVERAGE_WINDOW_SIZE] = {0};
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:361:17: warning: unused variable 'averageWindow_Y' [-Wunused-variable]
+  361 |         int16_t averageWindow_Y[AVERAGE_WINDOW_SIZE] = {0};
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:360:17: warning: unused variable 'averageWindow_X' [-Wunused-variable]
+  360 |         int16_t averageWindow_X[AVERAGE_WINDOW_SIZE] = {0};
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:358:15: warning: unused variable 'difftime' [-Wunused-variable]
+  358 |         float difftime=0;
+      |               ^~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:125:16: warning: 'calibrationBuffer_Z' defined but not used [-Wunused-variable]
+  125 | static int16_t calibrationBuffer_Z[CALIBRATION_BUFFER_LENGTH];
+      |                ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:124:16: warning: 'calibrationBuffer_Y' defined but not used [-Wunused-variable]
+  124 | static int16_t calibrationBuffer_Y[CALIBRATION_BUFFER_LENGTH];
+      |                ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:16: warning: 'calibrationBuffer_X' defined but not used [-Wunused-variable]
+  123 | static int16_t calibrationBuffer_X[CALIBRATION_BUFFER_LENGTH];
+      |                ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:110:16: warning: 'TempNoise_Z' defined but not used [-Wunused-variable]
+  110 | static int32_t TempNoise_Z = 0;
+      |                ^~~~~~~~~~~
+../Core/Src/main.c:109:16: warning: 'TempNoise_Y' defined but not used [-Wunused-variable]
+  109 | static int32_t TempNoise_Y = 0;
+      |                ^~~~~~~~~~~
+../Core/Src/main.c:108:16: warning: 'TempNoise_X' defined but not used [-Wunused-variable]
+  108 | static int32_t TempNoise_X = 0;
+      |                ^~~~~~~~~~~
+../Core/Src/main.c:106:14: warning: 'LastAngleRate_Z' defined but not used [-Wunused-variable]
+  106 | static float LastAngleRate_Z = 0;
+      |              ^~~~~~~~~~~~~~~
+../Core/Src/main.c:105:14: warning: 'LastAngleRate_Y' defined but not used [-Wunused-variable]
+  105 | static float LastAngleRate_Y = 0;
+      |              ^~~~~~~~~~~~~~~
+../Core/Src/main.c:104:14: warning: 'LastAngleRate_X' defined but not used [-Wunused-variable]
+  104 | static float LastAngleRate_X = 0;
+      |              ^~~~~~~~~~~~~~~
+../Core/Src/main.c:102:14: warning: 'Angle_Z' defined but not used [-Wunused-variable]
+  102 | static float Angle_Z = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:101:14: warning: 'Angle_Y' defined but not used [-Wunused-variable]
+  101 | static float Angle_Y = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:100:14: warning: 'Angle_X' defined but not used [-Wunused-variable]
+  100 | static float Angle_X = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:98:14: warning: 'Noise_Z' defined but not used [-Wunused-variable]
+   98 | static float Noise_Z = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:97:14: warning: 'Noise_Y' defined but not used [-Wunused-variable]
+   97 | static float Noise_Y = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:96:14: warning: 'Noise_X' defined but not used [-Wunused-variable]
+   96 | static float Noise_X = 0;
+      |              ^~~~~~~
+../Core/Src/main.c:94:16: warning: 'offset_z' defined but not used [-Wunused-variable]
+   94 | static int32_t offset_z=0;
+      |                ^~~~~~~~
+../Core/Src/main.c:93:16: warning: 'offset_y' defined but not used [-Wunused-variable]
+   93 | static int32_t offset_y=0;
+      |                ^~~~~~~~
+../Core/Src/main.c:92:16: warning: 'offset_x' defined but not used [-Wunused-variable]
+   92 | static int32_t offset_x=0;
+      |                ^~~~~~~~
+../Core/Src/main.c:90:14: warning: 'angleRate_z' defined but not used [-Wunused-variable]
+   90 | static float angleRate_z=0;
+      |              ^~~~~~~~~~~
+../Core/Src/main.c:89:14: warning: 'angleRate_y' defined but not used [-Wunused-variable]
+   89 | static float angleRate_y=0;
+      |              ^~~~~~~~~~~
+../Core/Src/main.c:88:14: warning: 'angleRate_x' defined but not used [-Wunused-variable]
+   88 | static float angleRate_x=0;
+      |              ^~~~~~~~~~~
+../Core/Src/main.c:75:29: warning: 'currentcalistate' defined but not used [-Wunused-variable]
+   75 | static L3GD20_caliStateType currentcalistate=L3GD20_collect_calibration_samples;
+      |                             ^~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "L3GD20_Gyro_SPI.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Bazar\Desktop\STM32\STM32F411Discovery\My-STM32F411ve_Discovery\STM32F411Discovery_L3GD20_Gyro_SPI\L3GD20_Gyro_SPI\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="L3GD20_Gyro_SPI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: L3GD20_Gyro_SPI.elf
+ 
+arm-none-eabi-size  L3GD20_Gyro_SPI.elf 
+arm-none-eabi-objdump -h -S L3GD20_Gyro_SPI.elf  > "L3GD20_Gyro_SPI.list"
+   text	   data	    bss	    dec	    hex	filename
+  10168	     12	   1708	  11888	   2e70	L3GD20_Gyro_SPI.elf
+Finished building: default.size.stdout
+ 
+Finished building: L3GD20_Gyro_SPI.list
+ 
+16:52:34 **** Incremental Build of configuration Debug for project L3GD20_Gyro_SPI ****
+make -j4 all 
+arm-none-eabi-size  L3GD20_Gyro_SPI.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10168	     12	   1708	  11888	   2e70	L3GD20_Gyro_SPI.elf
+Finished building: default.size.stdout
+ 
+16:56:12 **** Incremental Build of configuration Debug for project L3GD20_Gyro_SPI ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/L3GD20.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/L3GD20.d" -MT"Core/Src/L3GD20.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/L3GD20.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'Gyro_L3GD20_ReadData':
+../Core/Src/main.c:258:33: warning: passing argument 2 of 'L3GD20_ReadData' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  258 |         L3GD20_ReadData(&hspi1, &Gyro_Buffer[0], L3GD20_OUT_X_L_ADDR, 6);
+      |                                 ^~~~~~~~~~~~~~~
+In file included from ../Core/Src/main.c:24:
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:259:33: warning: passing argument 2 of 'L3GD20_ReadData' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  259 |         L3GD20_ReadData(&hspi1, &Gyro_Buffer[1], L3GD20_OUT_X_H_ADDR, 1);
+      |                                 ^~~~~~~~~~~~~~~
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:260:33: warning: passing argument 2 of 'L3GD20_ReadData' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  260 |         L3GD20_ReadData(&hspi1, &Gyro_Buffer[2], L3GD20_OUT_Y_L_ADDR, 1);
+      |                                 ^~~~~~~~~~~~~~~
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:261:33: warning: passing argument 2 of 'L3GD20_ReadData' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  261 |         L3GD20_ReadData(&hspi1, &Gyro_Buffer[3], L3GD20_OUT_Y_H_ADDR, 1);
+      |                                 ^~~~~~~~~~~~~~~
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:262:33: warning: passing argument 2 of 'L3GD20_ReadData' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  262 |         L3GD20_ReadData(&hspi1, &Gyro_Buffer[4], L3GD20_OUT_Z_L_ADDR, 1);
+      |                                 ^~~~~~~~~~~~~~~
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c:263:33: warning: passing argument 2 of 'L3GD20_ReadData' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  263 |         L3GD20_ReadData(&hspi1, &Gyro_Buffer[5], L3GD20_OUT_Z_H_ADDR, 1);
+      |                                 ^~~~~~~~~~~~~~~
+../Core/Inc/L3GD20.h:136:70: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'volatile uint8_t *' {aka 'volatile unsigned char *'}
+  136 | L3GD20_Gyro_Result L3GD20_ReadData(SPI_HandleTypeDef* SPIx, uint8_t* buffer, uint8_t addr, uint8_t num);
+      |                                                             ~~~~~~~~~^~~~~~
+arm-none-eabi-gcc -o "L3GD20_Gyro_SPI.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Bazar\Desktop\STM32\STM32F411Discovery\My-STM32F411ve_Discovery\STM32F411Discovery_L3GD20_Gyro_SPI\L3GD20_Gyro_SPI\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="L3GD20_Gyro_SPI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: L3GD20_Gyro_SPI.elf
+ 
+arm-none-eabi-size  L3GD20_Gyro_SPI.elf 
+arm-none-eabi-objdump -h -S L3GD20_Gyro_SPI.elf  > "L3GD20_Gyro_SPI.list"
+   text	   data	    bss	    dec	    hex	filename
+  10248	     12	   1708	  11968	   2ec0	L3GD20_Gyro_SPI.elf
+Finished building: default.size.stdout
+ 
+Finished building: L3GD20_Gyro_SPI.list
+ 
+16:56:38 **** Incremental Build of configuration Debug for project L3GD20_Gyro_SPI ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "L3GD20_Gyro_SPI.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Bazar\Desktop\STM32\STM32F411Discovery\My-STM32F411ve_Discovery\STM32F411Discovery_L3GD20_Gyro_SPI\L3GD20_Gyro_SPI\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="L3GD20_Gyro_SPI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: L3GD20_Gyro_SPI.elf
+ 
+arm-none-eabi-size  L3GD20_Gyro_SPI.elf 
+arm-none-eabi-objdump -h -S L3GD20_Gyro_SPI.elf  > "L3GD20_Gyro_SPI.list"
+   text	   data	    bss	    dec	    hex	filename
+  10236	     12	   1708	  11956	   2eb4	L3GD20_Gyro_SPI.elf
+Finished building: default.size.stdout
+ 
+Finished building: L3GD20_Gyro_SPI.list
+ 
+16:58:48 **** Incremental Build of configuration Debug for project L3GD20_Gyro_SPI ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "L3GD20_Gyro_SPI.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Bazar\Desktop\STM32\STM32F411Discovery\My-STM32F411ve_Discovery\STM32F411Discovery_L3GD20_Gyro_SPI\L3GD20_Gyro_SPI\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="L3GD20_Gyro_SPI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: L3GD20_Gyro_SPI.elf
+ 
+arm-none-eabi-size  L3GD20_Gyro_SPI.elf 
+arm-none-eabi-objdump -h -S L3GD20_Gyro_SPI.elf  > "L3GD20_Gyro_SPI.list"
+   text	   data	    bss	    dec	    hex	filename
+  10156	     12	   1708	  11876	   2e64	L3GD20_Gyro_SPI.elf
+Finished building: default.size.stdout
+ 
+Finished building: L3GD20_Gyro_SPI.list
+ 
+16:58:53 **** Incremental Build of configuration Debug for project L3GD20_Gyro_SPI ****
+make -j4 all 
+arm-none-eabi-size  L3GD20_Gyro_SPI.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10156	     12	   1708	  11876	   2e64	L3GD20_Gyro_SPI.elf
+Finished building: default.size.stdout
+ 
+17:01:04 **** Incremental Build of configuration Debug for project L3GD20_Gyro_SPI ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "L3GD20_Gyro_SPI.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Bazar\Desktop\STM32\STM32F411Discovery\My-STM32F411ve_Discovery\STM32F411Discovery_L3GD20_Gyro_SPI\L3GD20_Gyro_SPI\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="L3GD20_Gyro_SPI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: L3GD20_Gyro_SPI.elf
+ 
+arm-none-eabi-size  L3GD20_Gyro_SPI.elf 
+arm-none-eabi-objdump -h -S L3GD20_Gyro_SPI.elf  > "L3GD20_Gyro_SPI.list"
+   text	   data	    bss	    dec	    hex	filename
+  10236	     12	   1708	  11956	   2eb4	L3GD20_Gyro_SPI.elf
+Finished building: default.size.stdout
+ 
+Finished building: L3GD20_Gyro_SPI.list
+ 
+17:01:45 **** Incremental Build of configuration Debug for project L3GD20_Gyro_SPI ****
+make -j4 all 
+arm-none-eabi-size  L3GD20_Gyro_SPI.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10236	     12	   1708	  11956	   2eb4	L3GD20_Gyro_SPI.elf
+Finished building: default.size.stdout
+ 
