@@ -1,0 +1,30 @@
+!SESSION 2024-12-31 21:49:43.000 -----------------------------------------------
+eclipse.buildId=Version 1.17.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-12-31 21:49:59.835
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-12-31 21:49:59.838
+!MESSAGE Log4j2 initialized with config file C:\Users\Bazar\Desktop\STM32\STM32_Discoveries\My-STM32_Discoveries\STM32F746_Discovery\STM32F746Discovery_Ethernet_RMII_FreeRTOS_Ping\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-12-31 21:50:24.786
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2024-12-31 21:50:46.888
+!MESSAGE No repository found at https://sw-center.st.com/stm32cubeide/openstlinux/updatesite1.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2024-12-31 21:50:47.717
+!MESSAGE No repository found at https://sw-center.st.com/stm32cubeide/updatesite1.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2024-12-31 21:50:49.967
+!MESSAGE No repository found at https://download.eclipse.org/tools/cdt/releases/latest.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2024-12-31 21:50:51.472
+!MESSAGE No repository found at https://download.eclipse.org/releases/2023-12.
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-12-31 21:51:32.267
+!MESSAGE Indexed 'Ethernet_RMII_FreeRTOS_Ping' (20 sources, 82 headers) in 8.3 sec: 5,500 declarations; 31,081 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0055%)
