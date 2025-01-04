@@ -20,7 +20,6 @@ static void udp_thread(void *arg)
 	struct pbuf *txBuf;
 
 	conn = netconn_new(NETCONN_UDP);		// Create a new connection identifier
-
 	if (conn!= NULL)
 	{
 		err = netconn_bind(conn, IP_ADDR_ANY, 7);		// Bind connection to the port 7
