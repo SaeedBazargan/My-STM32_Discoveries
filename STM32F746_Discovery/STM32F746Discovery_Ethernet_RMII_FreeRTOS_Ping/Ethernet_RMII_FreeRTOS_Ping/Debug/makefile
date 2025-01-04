@@ -75,8 +75,8 @@ all: main-build
 main-build: Ethernet_RMII_FreeRTOS_Ping.elf secondary-outputs
 
 # Tool invocations
-Ethernet_RMII_FreeRTOS_Ping.elf Ethernet_RMII_FreeRTOS_Ping.map: $(OBJS) $(USER_OBJS) C:\Users\Bazar\Desktop\STM32\STM32_Discoveries\My-STM32_Discoveries\STM32F746_Discovery\STM32F746Discovery_Ethernet_RMII_FreeRTOS_Ping\Ethernet_RMII_FreeRTOS_Ping\STM32F746NGHX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Ethernet_RMII_FreeRTOS_Ping.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\Bazar\Desktop\STM32\STM32_Discoveries\My-STM32_Discoveries\STM32F746_Discovery\STM32F746Discovery_Ethernet_RMII_FreeRTOS_Ping\Ethernet_RMII_FreeRTOS_Ping\STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ethernet_RMII_FreeRTOS_Ping.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Ethernet_RMII_FreeRTOS_Ping.elf Ethernet_RMII_FreeRTOS_Ping.map: $(OBJS) $(USER_OBJS) E:\sbzrgn\My-STM32_Discoveries\STM32F746_Discovery\STM32F746Discovery_Ethernet_RMII_FreeRTOS_Ping\Ethernet_RMII_FreeRTOS_Ping\STM32F746NGHX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Ethernet_RMII_FreeRTOS_Ping.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"E:\sbzrgn\My-STM32_Discoveries\STM32F746_Discovery\STM32F746Discovery_Ethernet_RMII_FreeRTOS_Ping\Ethernet_RMII_FreeRTOS_Ping\STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ethernet_RMII_FreeRTOS_Ping.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

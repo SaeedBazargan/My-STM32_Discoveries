@@ -1,0 +1,10 @@
+13:47:12 **** Incremental Build of configuration Debug for project Ethernet_RMII_FreeRTOS_Ping ****
+make -j20 all 
+arm-none-eabi-size  Ethernet_RMII_FreeRTOS_Ping.elf 
+   text	   data	    bss	    dec	    hex	filename
+  85452	    460	  50284	 136196	  21404	Ethernet_RMII_FreeRTOS_Ping.elf
+Finished building: default.size.stdout
+ 
+
+13:47:13 Build Finished. 0 errors, 0 warnings. (took 504ms)
+

@@ -1,0 +1,2 @@
+../Core/Src/udpserver.c:17:13:udp_thread	4
+../Core/Src/udpserver.c:74:6:udpserver_init	1
