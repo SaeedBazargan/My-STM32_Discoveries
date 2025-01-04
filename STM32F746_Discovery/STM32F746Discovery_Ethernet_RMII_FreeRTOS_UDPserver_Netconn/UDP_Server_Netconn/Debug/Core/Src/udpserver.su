@@ -1,2 +1,2 @@
-../Core/Src/udpserver.c:17:13:udp_thread	32	static
-../Core/Src/udpserver.c:74:6:udpserver_init	16	static
+../Core/Src/udpserver.c:16:13:udp_thread	40	static
+../Core/Src/udpserver.c:75:6:udpserver_init	16	static

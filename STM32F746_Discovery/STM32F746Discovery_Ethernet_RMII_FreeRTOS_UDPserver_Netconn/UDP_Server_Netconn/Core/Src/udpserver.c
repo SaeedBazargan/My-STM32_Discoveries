@@ -1,69 +1,78 @@
 #include "lwip/opt.h"
 #include "lwip/api.h"
 #include "lwip/sys.h"
-
 #include "udpserver.h"
 #include "string.h"
 
+#define MSG_LEN 100 // Maximum message length
+
 static struct netconn *conn;
 static struct netbuf *buf;
-static ip_addr_t *addr;
-static unsigned short port;
 
-char msg[100];
-char smsg[200];
+static char msg[MSG_LEN];
+static char responseMsg[MSG_LEN + 50];
 
-// <---- ---------------------- Send RESPONSE every time the client sends some data ---------------------- ---->
+// UDP Server thread
 static void udp_thread(void *arg)
 {
-	err_t err, recv_err;
-	struct pbuf *txBuf;
+    err_t err;
+    struct pbuf *responseBuf;
 
-	conn = netconn_new(NETCONN_UDP);		// Create a new connection identifier
-	if (conn!= NULL)
-	{
-		err = netconn_bind(conn, IP_ADDR_ANY, 7);		// Bind connection to the port 7
+    // Create a new UDP connection
+    conn = netconn_new(NETCONN_UDP);
+    if (conn == NULL) {
+        return; // Exit if connection creation fails
+    }
 
-		if (err == ERR_OK)
-		{
-			/* The while loop will run everytime this Task is executed */
-			while (1)
-			{
-				recv_err = netconn_recv(conn, &buf);		// Receive the data from the connection
+    // Bind the connection to port 7
+    err = netconn_bind(conn, IP_ADDR_ANY, 7);
+    if (err != ERR_OK) {
+        netconn_delete(conn);
+        return; // Exit if binding fails
+    }
 
-				if (recv_err == ERR_OK) // if the data is received
-				{
-					addr = netbuf_fromaddr(buf);  // get the address of the client
-					port = netbuf_fromport(buf);  // get the Port of the client
-					strcpy (msg, buf->p->payload);   // get the message from the client
+    // Main server loop
+    while (1) {
+        // Wait to receive data
+        err = netconn_recv(conn, &buf);
+        if (err == ERR_OK) {
+            // Extract client information
+            ip_addr_t *addr = netbuf_fromaddr(buf);   // Client IP address
+            unsigned short port = netbuf_fromport(buf); // Client port
 
-					int len = sprintf (smsg, "\"%s\" was sent by the Client\n", (char *)buf->p->payload);		// Or modify the message received, so that we can send it back to the client
+            // Copy client data to msg buffer
+            strncpy(msg, buf->p->payload, MSG_LEN);
+            msg[MSG_LEN - 1] = '\0'; // Ensure null termination
 
-					txBuf = pbuf_alloc(PBUF_TRANSPORT, len, PBUF_RAM);		// allocate pbuf from RAM
+            // Format the response message
+            int responseLen = snprintf(responseMsg, sizeof(responseMsg), "\"%s\" was sent by the Client\n", msg);
 
-					pbuf_take(txBuf, smsg, len);		// copy the data into the buffer
+            // Allocate memory for the response buffer
+            responseBuf = pbuf_alloc(PBUF_TRANSPORT, responseLen, PBUF_RAM);
+            if (responseBuf != NULL) {
+                // Copy response message into the buffer
+                pbuf_take(responseBuf, responseMsg, responseLen);
 
-					buf->p = txBuf;		// refer the nebuf->pbuf to our pbuf
+                // Attach the response buffer to the network buffer
+                buf->p = responseBuf;
 
-					netconn_connect(conn, addr, port);  // connect to the destination address and port
+                // Send response to the client
+                netconn_connect(conn, addr, port);
+                netconn_send(conn, buf);
 
-					netconn_send(conn,buf);  // send the netbuf to the client
-
-					buf->addr.addr = 0;  // clear the address
-					pbuf_free(txBuf);   // clear the pbuf
-					netbuf_delete(buf);  // delete the netbuf
-				}
-			}
-		}
-		else
-		{
-			netconn_delete(conn);
-		}
-	}
+                // Clean up resources
+                pbuf_free(responseBuf);
+                netbuf_delete(buf);
+            } else {
+                // Clean up resources if response buffer allocation fails
+                netbuf_delete(buf);
+            }
+        }
+    }
 }
 
-
+// Initialize UDP server
 void udpserver_init(void)
 {
-  sys_thread_new("udp_thread", udp_thread, NULL, DEFAULT_THREAD_STACKSIZE, osPriorityNormal);
+    sys_thread_new("udp_thread", udp_thread, NULL, DEFAULT_THREAD_STACKSIZE, osPriorityNormal);
 }

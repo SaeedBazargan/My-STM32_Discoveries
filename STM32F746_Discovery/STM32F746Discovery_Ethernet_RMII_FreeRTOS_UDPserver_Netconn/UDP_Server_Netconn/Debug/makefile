@@ -75,8 +75,8 @@ all: main-build
 main-build: UDP_Server_Netconn.elf secondary-outputs
 
 # Tool invocations
-UDP_Server_Netconn.elf UDP_Server_Netconn.map: $(OBJS) $(USER_OBJS) E:\sbzrgn\My-STM32_Discoveries\STM32F746_Discovery\STM32F746Discovery_Ethernet_RMII_FreeRTOS_UDPserver_Netconn\UDP_Server_Netconn\STM32F746NGHX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "UDP_Server_Netconn.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"E:\sbzrgn\My-STM32_Discoveries\STM32F746_Discovery\STM32F746Discovery_Ethernet_RMII_FreeRTOS_UDPserver_Netconn\UDP_Server_Netconn\STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UDP_Server_Netconn.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+UDP_Server_Netconn.elf UDP_Server_Netconn.map: $(OBJS) $(USER_OBJS) C:\Users\Bazar\Desktop\STM32\STM32_Discoveries\My-STM32_Discoveries\STM32F746_Discovery\STM32F746Discovery_Ethernet_RMII_FreeRTOS_UDPserver_Netconn\UDP_Server_Netconn\STM32F746NGHX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "UDP_Server_Netconn.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\Bazar\Desktop\STM32\STM32_Discoveries\My-STM32_Discoveries\STM32F746_Discovery\STM32F746Discovery_Ethernet_RMII_FreeRTOS_UDPserver_Netconn\UDP_Server_Netconn\STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UDP_Server_Netconn.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
