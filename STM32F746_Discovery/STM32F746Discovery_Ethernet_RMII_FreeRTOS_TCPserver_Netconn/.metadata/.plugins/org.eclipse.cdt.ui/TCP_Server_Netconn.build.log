@@ -1,0 +1,10 @@
+21:14:07 **** Incremental Build of configuration Debug for project TCP_Server_Netconn ****
+make -j4 all 
+arm-none-eabi-size  TCP_Server_Netconn.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 105316	    460	  50764	 156540	  2637c	TCP_Server_Netconn.elf
+Finished building: default.size.stdout
+ 
+
+21:14:08 Build Finished. 0 errors, 0 warnings. (took 1s.465ms)
+

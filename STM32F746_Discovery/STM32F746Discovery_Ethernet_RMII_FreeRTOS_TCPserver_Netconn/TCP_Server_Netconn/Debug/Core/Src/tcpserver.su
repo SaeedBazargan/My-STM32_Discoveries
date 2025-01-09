@@ -1,0 +1,2 @@
+../Core/Src/tcpserver.c:16:13:tcp_thread	32	static
+../Core/Src/tcpserver.c:80:6:tcpserver_init	16	static
