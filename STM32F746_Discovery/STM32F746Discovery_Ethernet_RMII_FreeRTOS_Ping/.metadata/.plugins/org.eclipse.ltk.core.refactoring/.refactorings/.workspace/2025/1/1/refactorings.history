@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Delete resource &apos;Ethernet_RMII_FreeRTOS_Ping&apos;" deleteContents="false" description="Delete resource &apos;Ethernet_RMII_FreeRTOS_Ping&apos;" element1="/Ethernet_RMII_FreeRTOS_Ping" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1735977040203"/>
-</session>
