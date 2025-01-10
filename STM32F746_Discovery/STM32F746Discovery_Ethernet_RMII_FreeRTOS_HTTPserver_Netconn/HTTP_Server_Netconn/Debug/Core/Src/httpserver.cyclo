@@ -1,0 +1,3 @@
+../Core/Src/httpserver.c:13:13:http_server	4
+../Core/Src/httpserver.c:56:13:http_thread	4
+../Core/Src/httpserver.c:92:6:http_server_init	1

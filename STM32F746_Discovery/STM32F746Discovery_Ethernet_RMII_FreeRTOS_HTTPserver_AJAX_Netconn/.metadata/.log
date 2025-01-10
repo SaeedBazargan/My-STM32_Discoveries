@@ -1,0 +1,100 @@
+!SESSION 2025-01-10 12:46:24.342 -----------------------------------------------
+eclipse.buildId=Version 1.17.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-01-10 12:46:37.850
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-01-10 12:46:37.853
+!MESSAGE Log4j2 initialized with config file C:\Users\Bazar\Desktop\STM32\STM32_Discoveries\My-STM32_Discoveries\STM32F746_Discovery\STM32F746Discovery_Ethernet_RMII_FreeRTOS_HTTPserver_AJAX_Netconn\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-01-10 12:46:43.280
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2025-01-10 12:47:20.894
+!MESSAGE No repository found at https://sw-center.st.com/stm32cubeide/openstlinux/updatesite1.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2025-01-10 12:47:23.741
+!MESSAGE No repository found at https://sw-center.st.com/stm32cubeide/updatesite1.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2025-01-10 12:47:31.624
+!MESSAGE No repository found at https://download.eclipse.org/tools/cdt/releases/latest.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2025-01-10 12:47:36.261
+!MESSAGE No repository found at https://download.eclipse.org/releases/2023-12.
+
+!ENTRY org.eclipse.ui.workbench 4 2 2025-01-10 12:48:41.641
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.workbench".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "org.eclipse.cdt.managedbuilder.core.IManagedBuildInfo.getDefaultConfiguration()" because "buildInfo" is null
+	at com.st.stm32cube.ide.mcu.build.ui.decorator.BoldDecorator.decorate(BoldDecorator.java:79)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:253)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:105)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:360)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:346)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.queue(DecorationScheduler.java:419)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:397)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui 4 4 2025-01-10 12:48:41.647
+!MESSAGE Exception in Decorator. The 'linkerDecorator' decorator will be disabled.
+!SUBENTRY 1 org.eclipse.ui 4 4 2025-01-10 12:48:41.647
+!MESSAGE Cannot invoke "org.eclipse.cdt.managedbuilder.core.IManagedBuildInfo.getDefaultConfiguration()" because "buildInfo" is null
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "org.eclipse.cdt.managedbuilder.core.IManagedBuildInfo.getDefaultConfiguration()" because "buildInfo" is null
+	at com.st.stm32cube.ide.mcu.build.ui.decorator.BoldDecorator.decorate(BoldDecorator.java:79)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:253)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:105)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:360)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:346)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.queue(DecorationScheduler.java:419)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:397)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-01-10 12:49:07.458
+!MESSAGE Indexed 'HTTP_Server_AJAX_Netconn' (122 sources, 311 headers) in 22.6 sec: 19,599 declarations; 114,597 references; 2 unresolved inclusions; 147 syntax errors; 203 unresolved names (0.15%)
+
+!ENTRY org.eclipse.core.resources 4 77 2025-01-10 13:17:07.982
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2025-01-10 13:17:07.982
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2025-01-10 13:17:07.982
+!MESSAGE C:\Users\Bazar\Desktop\STM32\STM32_Discoveries\My-STM32_Discoveries\STM32F746_Discovery\STM32F746Discovery_Ethernet_RMII_FreeRTOS_HTTPserver_AJAX_Netconn\HTTP_Server_AJAX_Netconn overlaps the location of another project: 'HTTP_Server_AJAX_Netconn'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2025-01-10 13:17:07.984
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2025-01-10 13:25:38.636
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2025-01-10 13:25:38.636
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2025-01-10 13:25:38.636
+!MESSAGE C:\Users\Bazar\Desktop\STM32\STM32_Discoveries\My-STM32_Discoveries\STM32F746_Discovery\STM32F746Discovery_Ethernet_RMII_FreeRTOS_HTTPserver_AJAX_Netconn\HTTP_Server_AJAX_Netconn overlaps the location of another project: 'HTTP_Server_AJAX_Netconn'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2025-01-10 13:25:38.637
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2025-01-10 13:25:49.923
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2025-01-10 13:25:49.923
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2025-01-10 13:25:49.923
+!MESSAGE C:\Users\Bazar\Desktop\STM32\STM32_Discoveries\My-STM32_Discoveries\STM32F746_Discovery\STM32F746Discovery_Ethernet_RMII_FreeRTOS_HTTPserver_AJAX_Netconn\HTTP_Server_AJAX_Netconn overlaps the location of another project: 'HTTP_Server_AJAX_Netconn'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2025-01-10 13:25:49.924
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2025-01-10 13:25:50.742
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2025-01-10 13:25:50.742
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2025-01-10 13:25:50.742
+!MESSAGE C:\Users\Bazar\Desktop\STM32\STM32_Discoveries\My-STM32_Discoveries\STM32F746_Discovery\STM32F746Discovery_Ethernet_RMII_FreeRTOS_HTTPserver_AJAX_Netconn\HTTP_Server_AJAX_Netconn overlaps the location of another project: 'HTTP_Server_AJAX_Netconn'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2025-01-10 13:25:50.744
+!MESSAGE Project is null

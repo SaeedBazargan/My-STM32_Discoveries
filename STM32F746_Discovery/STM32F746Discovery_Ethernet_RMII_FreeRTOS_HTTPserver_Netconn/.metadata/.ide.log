@@ -1,0 +1,2 @@
+2025-01-10 00:02:39,922 [ERROR] ConfigurationRetriever:142 - IOException on connection: Software caused connection abort: getsockopt
+2025-01-10 00:08:56,544 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
