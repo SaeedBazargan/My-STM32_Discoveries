@@ -1,0 +1,3 @@
+../Core/Src/udpclient.c:15:13:udpinit_thread	24	static
+../Core/Src/udpclient.c:49:6:udpclient_init	16	static
+../Core/Src/udpclient.c:54:6:udpsend	24	static
