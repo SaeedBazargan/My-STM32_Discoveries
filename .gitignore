@@ -1,4 +1,3 @@
-*/.metadata
-*/.settings
-*/.launch
-
+**/.metadata/
+**/.settings/
+**/*.launch
