@@ -1,0 +1,4 @@
+../Core/Src/SDCard_Configuration.c:17:6:Mount_SD	16	static
+../Core/Src/SDCard_Configuration.c:32:6:Unmount_SD	16	static
+../Core/Src/SDCard_Configuration.c:47:9:Format_SD	64	static
+../Core/Src/SDCard_Configuration.c:85:9:Create_File	16	static
