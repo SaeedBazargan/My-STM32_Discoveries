@@ -46,7 +46,7 @@ SD_HandleTypeDef hsd1;
 
 /* USER CODE BEGIN PV */
 uint8_t count = 0;
-
+char buffer[100];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -104,9 +104,11 @@ int main(void)
   /* USER CODE BEGIN 2 */
   Mount_SD(SDPath);
   Format_SD();
+  Check_SD_Space();
   Create_File("MRL.txt");
+  sprintf(buffer, "Hello MRL \n Hello Maryam \n");
+  Update_File("MRL.txt", buffer);
   Unmount_SD(SDPath);
-  printf("Fresult =>");
   /* USER CODE END 2 */
 
   /* Infinite loop */
