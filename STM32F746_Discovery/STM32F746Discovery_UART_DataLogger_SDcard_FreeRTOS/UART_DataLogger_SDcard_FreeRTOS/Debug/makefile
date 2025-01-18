@@ -9,6 +9,10 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/subdir.mk
+-include Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/subdir.mk
+-include Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/subdir.mk
+-include Middlewares/Third_Party/FreeRTOS/Source/subdir.mk
 -include Middlewares/Third_Party/FatFs/src/option/subdir.mk
 -include Middlewares/Third_Party/FatFs/src/subdir.mk
 -include FATFS/Target/subdir.mk
@@ -64,8 +68,8 @@ all: main-build
 main-build: UART_DataLogger_SDcard_FreeRTOS.elf secondary-outputs
 
 # Tool invocations
-UART_DataLogger_SDcard_FreeRTOS.elf UART_DataLogger_SDcard_FreeRTOS.map: $(OBJS) $(USER_OBJS) C:\Users\Bazar\Desktop\STM32\STM32_Discoveries\My-STM32_Discoveries\STM32F746_Discovery\STM32F746Discovery_UART_DataLogger_SDcard_FreeRTOS\UART_DataLogger_SDcard_FreeRTOS\STM32F746NGHX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "UART_DataLogger_SDcard_FreeRTOS.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\Bazar\Desktop\STM32\STM32_Discoveries\My-STM32_Discoveries\STM32F746_Discovery\STM32F746Discovery_UART_DataLogger_SDcard_FreeRTOS\UART_DataLogger_SDcard_FreeRTOS\STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_DataLogger_SDcard_FreeRTOS.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+UART_DataLogger_SDcard_FreeRTOS.elf UART_DataLogger_SDcard_FreeRTOS.map: $(OBJS) $(USER_OBJS) E:\sbzrgn\My-STM32_Discoveries\STM32F746_Discovery\STM32F746Discovery_UART_DataLogger_SDcard_FreeRTOS\UART_DataLogger_SDcard_FreeRTOS\STM32F746NGHX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "UART_DataLogger_SDcard_FreeRTOS.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"E:\sbzrgn\My-STM32_Discoveries\STM32F746_Discovery\STM32F746Discovery_UART_DataLogger_SDcard_FreeRTOS\UART_DataLogger_SDcard_FreeRTOS\STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_DataLogger_SDcard_FreeRTOS.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
