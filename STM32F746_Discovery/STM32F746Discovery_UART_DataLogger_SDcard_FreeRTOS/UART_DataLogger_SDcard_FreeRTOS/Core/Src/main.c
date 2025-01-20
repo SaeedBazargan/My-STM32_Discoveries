@@ -54,6 +54,8 @@ typedef struct
 /* Private variables ---------------------------------------------------------*/
 
 SD_HandleTypeDef hsd1;
+DMA_HandleTypeDef hdma_sdmmc1_rx;
+DMA_HandleTypeDef hdma_sdmmc1_tx;
 
 UART_HandleTypeDef huart6;
 
@@ -80,6 +82,7 @@ uint8_t dxlLog[BUFFER_SIZE];
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
+static void MX_DMA_Init(void);
 static void MX_SDMMC1_SD_Init(void);
 static void MX_USART6_UART_Init(void);
 void StartDefaultTask(void const * argument);
@@ -88,11 +91,11 @@ void StartDefaultTask(void const * argument);
 void StartMainTask(void const * argument);
 void StartRecordTask(void const * argument);
 
-void FIFO_init(FIFO_t* fifo, uint8_t* buffer, uint8_t size);
+void FIFO_init(FIFO_t* fifo);
 bool FIFO_isEmpty(const FIFO_t* fifo);
 bool FIFO_isFull(const FIFO_t* fifo);
-bool FIFO_Enqueue(FIFO_t* fifo, uint8_t data);
-bool FIFO_Dequeue(FIFO_t* fifo, uint8_t* data);
+bool FIFO_Enqueue(FIFO_t* fifo, uint8_t* data, uint8_t size);
+bool FIFO_Dequeue(FIFO_t* fifo, uint8_t* data, uint8_t size);
 uint8_t DXL_CheckSumCalc(uint8_t *packet);
 /* USER CODE END PFP */
 
@@ -138,21 +141,15 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_SDMMC1_SD_Init();
   MX_FATFS_Init();
   MX_USART6_UART_Init();
   /* USER CODE BEGIN 2 */
-//  Mount_SD(SDPath);
-//  Format_SD();
-//  Check_SD_Space();
-//  Create_File("MRL.txt");
-//  sprintf(sd_buffer, "Hello MRL \n Hello Maryam \n");
-//  Update_File("MRL.txt", sd_buffer);
-//  Unmount_SD(SDPath);
 
   HAL_UART_Receive_IT(&huart6, &uart_rec, 1);
 
-  FIFO_init(&fifo, dxlBuffer, sizeof(dxlBuffer));
+  FIFO_init(&fifo);
   /* USER CODE END 2 */
 
   /* USER CODE BEGIN RTOS_MUTEX */
@@ -175,15 +172,15 @@ int main(void)
 
   /* Create the thread(s) */
   /* definition and creation of defaultTask */
-//  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
+//  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 1024);
 //  defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
-  osThreadDef(mainTask, StartMainTask, osPriorityNormal, 0, 128);
+  osThreadDef(mainTask, StartMainTask, osPriorityNormal, 0, 1024);
   mainTaskHandle = osThreadCreate(osThread(mainTask), NULL);
 
-  osThreadDef(recordTask, StartRecordTask, osPriorityNormal, 0, 128);
+  osThreadDef(recordTask, StartRecordTask, osPriorityNormal, 0, 1024);
   recordTaskHandle = osThreadCreate(osThread(recordTask), NULL);
   /* USER CODE END RTOS_THREADS */
 
@@ -315,6 +312,25 @@ static void MX_USART6_UART_Init(void)
 }
 
 /**
+  * Enable DMA controller clock
+  */
+static void MX_DMA_Init(void)
+{
+
+  /* DMA controller clock enable */
+  __HAL_RCC_DMA2_CLK_ENABLE();
+
+  /* DMA interrupt init */
+  /* DMA2_Stream3_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA2_Stream3_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(DMA2_Stream3_IRQn);
+  /* DMA2_Stream6_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA2_Stream6_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(DMA2_Stream6_IRQn);
+
+}
+
+/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -344,20 +360,18 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-	if(huart->Instance == USART6)
+	if(HAL_UART_Receive_IT(&huart6, &uart_rec, 1) == HAL_OK)
 	{
 		osSemaphoreRelease(recDataSemaphore);
 	}
 }
 //<---- -------------------------------------------------------- ---->
 
-void FIFO_init(FIFO_t* fifo, uint8_t* buffer, uint8_t size)
+void FIFO_init(FIFO_t* fifo)
 {
-	fifo->buffer = buffer;
-	fifo->size = size;
-	fifo->count = 0;
 	fifo->head = 0;
 	fifo->tail = 0;
+	fifo->count = 0;
 }
 //<---- -------------------------------------------------------- ---->
 
@@ -369,31 +383,37 @@ bool FIFO_isEmpty(const FIFO_t* fifo)
 
 bool FIFO_isFull(const FIFO_t* fifo)
 {
-	return (fifo->count == fifo->size);
+	return (fifo->count == BUFFER_SIZE);
 }
 //<---- -------------------------------------------------------- ---->
 
-bool FIFO_Enqueue(FIFO_t* fifo, uint8_t data)
+bool FIFO_Enqueue(FIFO_t* fifo, uint8_t* data, uint8_t size)
 {
-	if(FIFO_isFull(fifo))
+	if((fifo->count + size) > BUFFER_SIZE)
 		return false;
 
-	fifo->buffer[fifo->tail] = data;
-	fifo->tail = (fifo->tail + 1) % fifo->size;
-	fifo->count++;
+	for(uint8_t i = 0; i < size; i++)
+	{
+		fifo->buffer[fifo->tail] = data[i];
+		fifo->tail = (fifo->tail + 1) % BUFFER_SIZE;
+	}
+	fifo->count += size;
 
 	return true;
 }
 //<---- -------------------------------------------------------- ---->
 
-bool FIFO_Dequeue(FIFO_t* fifo, uint8_t* data)
+bool FIFO_Dequeue(FIFO_t* fifo, uint8_t* data, uint8_t size)
 {
-	if(FIFO_isEmpty(fifo))
+	if(fifo->count < size)
 		return false;
 
-	*data = fifo->buffer[fifo->head];
-	fifo->head = (fifo->head + 1) % fifo->size;
-	fifo->count--;
+	for(uint8_t i = 0; i < size; i++)
+	{
+		data[i] = fifo->buffer[fifo->head];
+		fifo->head = (fifo->head + 1) % BUFFER_SIZE;
+	}
+	fifo->count -= size;
 
 	return true;
 }
@@ -421,34 +441,52 @@ uint8_t DXL_CheckSumCalc(uint8_t *packet)
   */
 void StartMainTask(void const * argument)
 {
-	uint8_t tmp = 0;
 	for(;;)
 	{
 		osSemaphoreWait(recDataSemaphore, osWaitForever);
-		HAL_UART_Receive_IT(&huart6, &uart_rec, 1);
+
 		uart_recBuffer[uart_recCount++] = uart_rec;
-		if(uart_recBuffer[3] > 2)
+		if(uart_recBuffer[3] > 2 && uart_recCount == (uart_recBuffer[3] + 4))
 		{
-			FIFO_Enqueue(&fifo, uart_rec);
-		}
-		if(uart_recCount == uart_recBuffer[3] + 4)
-		{
-			tmp = uart_recBuffer[3] + 3;
-			if(DXL_CheckSumCalc(uart_recBuffer) == uart_recBuffer[tmp])
-			{
-				osSemaphoreRelease(recordDataSemaphore);
-			}
+			FIFO_Enqueue(&fifo, uart_recBuffer, uart_recCount);
+			// ToDo: SendOut to DXL
+			osSemaphoreRelease(recordDataSemaphore);
 		}
 	}
 }
 //<---- -------------------------------------------------------- ---->
 void StartRecordTask(void const * argument)
 {
+	uint8_t dxlLog[BUFFER_SIZE];
+
 	for(;;)
 	{
 		osSemaphoreWait(recordDataSemaphore, osWaitForever);
-		FIFO_Dequeue(&fifo, dxlLog);
-		printf("Hello");
+		FIFO_Dequeue(&fifo, dxlLog, uart_recCount);
+		count++;
+
+		Mount_SD(SDPath);
+		Format_SD();
+		Check_SD_Space();
+		Create_File("MRL.txt");
+		sprintf(sd_buffer, "Hello MRL ----> %d\n", count);
+		Update_File("MRL.txt", sd_buffer);
+
+		sprintf(sd_buffer, "Packet ----> ");
+		for(uint8_t i = 0; i < uart_recCount; i++)
+		{
+			char byte_str[uart_recCount];
+
+			sprintf(byte_str, "%02X ", dxlLog[i]);
+			strcat(sd_buffer, byte_str);
+		}
+
+		strcat(sd_buffer, "\n");
+		Update_File("MRL.txt", sd_buffer);
+		Unmount_SD(SDPath);
+
+		uart_recCount = 0;
+		memset(&fifo, 0, sizeof(FIFO_t));
 	}
 }
 /* USER CODE END Header_StartDefaultTask */
@@ -457,7 +495,9 @@ void StartDefaultTask(void const * argument)
   /* USER CODE BEGIN 5 */
   /* Infinite loop */
   for(;;)
-  {}
+  {
+    osDelay(1);
+  }
   /* USER CODE END 5 */
 }
 

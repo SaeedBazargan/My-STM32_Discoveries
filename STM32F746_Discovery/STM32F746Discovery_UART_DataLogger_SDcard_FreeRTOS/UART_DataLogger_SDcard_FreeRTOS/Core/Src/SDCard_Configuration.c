@@ -15,7 +15,7 @@ DWORD fre_clust;
 //<---- --------------- Functions --------------- ---->
 void Mount_SD(const TCHAR* path)
 {
-	fresult = f_mount(&fs, path, 1);
+	fresult = f_mount(&fs, path, 0);
 	printf("Fresult in Mounting => %d \n", fresult);
 
 	if(fresult == FR_OK)
@@ -30,7 +30,7 @@ void Mount_SD(const TCHAR* path)
 //<---- -------------------------------------------------------- ---->
 void Unmount_SD(const TCHAR* path)
 {
-	fresult = f_mount(NULL, path, 1);
+	fresult = f_mount(NULL, path, 0);
 	printf("Fresult in Unmounting => %d \n", fresult);
 
 	if(fresult == FR_OK)
