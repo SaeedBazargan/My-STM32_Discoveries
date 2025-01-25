@@ -466,7 +466,7 @@ void StartRecordTask(void const * argument)
 		count++;
 
 		Mount_SD(SDPath);
-		Format_SD();
+		// Format_SD();
 		Check_SD_Space();
 		Create_File("MRL.txt");
 		sprintf(sd_buffer, "Hello MRL ----> %d\n", count);
