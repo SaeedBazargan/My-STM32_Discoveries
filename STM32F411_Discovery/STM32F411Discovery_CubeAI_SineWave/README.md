@@ -1,0 +1,2 @@
+### file:///C:/Users/username/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/9.0.0/Documentation/how_to_run_a_model_locally.html
+### https://www.digikey.com/en/maker/projects/tinyml-getting-started-with-stm32-x-cube-ai/f94e1c8bfc1e4b6291d0f672d780d2c0
