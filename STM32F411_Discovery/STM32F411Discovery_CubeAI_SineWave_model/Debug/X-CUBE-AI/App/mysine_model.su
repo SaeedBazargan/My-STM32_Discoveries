@@ -1,0 +1,13 @@
+../X-CUBE-AI/App/mysine_model.c:332:9:mysine_model_configure_activations	16	static
+../X-CUBE-AI/App/mysine_model.c:363:9:mysine_model_configure_weights	16	static
+../X-CUBE-AI/App/mysine_model.c:402:9:ai_mysine_model_get_info	160	static
+../X-CUBE-AI/App/mysine_model.c:449:9:ai_mysine_model_get_report	160	static
+../X-CUBE-AI/App/mysine_model.c:496:10:ai_mysine_model_get_error	16	static
+../X-CUBE-AI/App/mysine_model.c:503:10:ai_mysine_model_create	24	static
+../X-CUBE-AI/App/mysine_model.c:514:10:ai_mysine_model_create_and_init	88	static
+../X-CUBE-AI/App/mysine_model.c:549:12:ai_mysine_model_inputs_get	16	static
+../X-CUBE-AI/App/mysine_model.c:560:12:ai_mysine_model_outputs_get	16	static
+../X-CUBE-AI/App/mysine_model.c:571:11:ai_mysine_model_destroy	16	static
+../X-CUBE-AI/App/mysine_model.c:578:9:ai_mysine_model_init	24	static
+../X-CUBE-AI/App/mysine_model.c:595:8:ai_mysine_model_run	24	static
+../X-CUBE-AI/App/mysine_model.c:603:8:ai_mysine_model_forward	16	static
