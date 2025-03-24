@@ -1,0 +1,5 @@
+../Lib/MyTFT.c:4:6:TFT_FillScreen	24	static
+../Lib/MyTFT.c:14:6:TFT_FillRectangle	32	static
+../Lib/MyTFT.c:34:6:TFT_DrawPixel	16	static
+../Lib/MyTFT.c:39:6:TFT_DrawLine	56	static
+../Lib/MyTFT.c:90:6:TFT_DrawBitmap	48	static

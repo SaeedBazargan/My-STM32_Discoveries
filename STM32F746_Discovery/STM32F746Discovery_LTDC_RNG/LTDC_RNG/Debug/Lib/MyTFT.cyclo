@@ -1,0 +1,5 @@
+../Lib/MyTFT.c:4:6:TFT_FillScreen	2
+../Lib/MyTFT.c:14:6:TFT_FillRectangle	5
+../Lib/MyTFT.c:34:6:TFT_DrawPixel	1
+../Lib/MyTFT.c:39:6:TFT_DrawLine	8
+../Lib/MyTFT.c:90:6:TFT_DrawBitmap	5
