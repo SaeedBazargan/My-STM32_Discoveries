@@ -4,9 +4,6 @@
 uint16_t _CS_PinNumber = 0x0000;
 GPIO_TypeDef *_CS_GPIO;
 
-uint8_t temp;
-uint8_t transmit_buffer[2] = {0, 0};
-
 // <---- ------------ Main L3GD20 Functions ------------ ---->
 // <---- ------------ L3GD20 Initialize ------------ ---->
 L3GD20_Gyro_Result L3GD20_Init(SPI_HandleTypeDef* SPIx , GPIO_TypeDef *CS_GPIOx, uint16_t CS_PinNumber, L3GD20TypeDef* datastruct)
@@ -15,6 +12,8 @@ L3GD20_Gyro_Result L3GD20_Init(SPI_HandleTypeDef* SPIx , GPIO_TypeDef *CS_GPIOx,
 	_CS_PinNumber = CS_PinNumber;
 
 	uint8_t WHO_AM_I = (uint8_t)L3GD20_WHO_AM_I_ADDR;
+	uint8_t temp;
+	uint8_t transmit_buffer[2] = {0, 0};
 
 	L3GD20_ReadData(SPIx, &temp, WHO_AM_I, 1);
 	if(temp != I_AM_L3GD20_TR)
