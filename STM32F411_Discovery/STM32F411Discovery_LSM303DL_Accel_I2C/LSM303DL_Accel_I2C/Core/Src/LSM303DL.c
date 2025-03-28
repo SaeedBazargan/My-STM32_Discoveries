@@ -1,8 +1,6 @@
 #include "LSM303DL.h"
 
 // <---- ------------ Variables ------------ ---->
-uint8_t temp = 0x00;
-uint8_t transmit_buffer[2] = {0, 0};
 uint8_t I2C_ADDRESS = 0x00;
 
 // <---- ------------ Main LSM303DL Functions ------------ ---->
@@ -10,6 +8,8 @@ uint8_t I2C_ADDRESS = 0x00;
 LSM303DLHC_Accel_Result LSM303DL_Init(I2C_HandleTypeDef* I2Cx , LSM303DLTypeDef* datastruct)
 {
 	uint8_t IsDeviceReady = 0xFF;
+	uint8_t temp = 0x00;
+	uint8_t transmit_buffer[2] = {0, 0};
 
     IsDeviceReady = HAL_I2C_IsDeviceReady(I2Cx, ACC_I2C_ADDRESS, 1, 100);
 	if(IsDeviceReady == HAL_OK)
