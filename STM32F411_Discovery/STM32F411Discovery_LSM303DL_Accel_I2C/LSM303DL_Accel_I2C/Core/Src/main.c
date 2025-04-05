@@ -107,6 +107,7 @@ int main(void)
     /* USER CODE BEGIN 3 */
 	  Accel_LSM303DL_ReadData();
 	  HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
+	  HAL_Delay(700);
   }
   /* USER CODE END 3 */
 }

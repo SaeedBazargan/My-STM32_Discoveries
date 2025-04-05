@@ -60,8 +60,8 @@ all: main-build
 main-build: LSM303DL_Accel_I2C.elf secondary-outputs
 
 # Tool invocations
-LSM303DL_Accel_I2C.elf LSM303DL_Accel_I2C.map: $(OBJS) $(USER_OBJS) E:\sbzrgn\My-STM32F411ve_Discovery\STM32F411Discovery_LSM303DL_Accel_I2C\LSM303DL_Accel_I2C\STM32F411VETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "LSM303DL_Accel_I2C.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\sbzrgn\My-STM32F411ve_Discovery\STM32F411Discovery_LSM303DL_Accel_I2C\LSM303DL_Accel_I2C\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LSM303DL_Accel_I2C.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+LSM303DL_Accel_I2C.elf LSM303DL_Accel_I2C.map: $(OBJS) $(USER_OBJS) C:\Users\Bazar\Desktop\My-STM32_Discoveries\STM32F411_Discovery\STM32F411Discovery_LSM303DL_Accel_I2C\LSM303DL_Accel_I2C\STM32F411VETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "LSM303DL_Accel_I2C.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\Bazar\Desktop\My-STM32_Discoveries\STM32F411_Discovery\STM32F411Discovery_LSM303DL_Accel_I2C\LSM303DL_Accel_I2C\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LSM303DL_Accel_I2C.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

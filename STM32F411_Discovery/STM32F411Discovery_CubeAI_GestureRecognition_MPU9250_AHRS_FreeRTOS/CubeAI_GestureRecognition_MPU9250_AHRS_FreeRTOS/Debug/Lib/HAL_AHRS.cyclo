@@ -1,0 +1,4 @@
+../Lib/HAL_AHRS.c:4:14:oneOverSqrt	1
+../Lib/HAL_AHRS.c:9:13:calculateAngles	3
+../Lib/HAL_AHRS.c:31:6:AHRS_Init	1
+../Lib/HAL_AHRS.c:44:6:AHRS_UpdateIMU	4
