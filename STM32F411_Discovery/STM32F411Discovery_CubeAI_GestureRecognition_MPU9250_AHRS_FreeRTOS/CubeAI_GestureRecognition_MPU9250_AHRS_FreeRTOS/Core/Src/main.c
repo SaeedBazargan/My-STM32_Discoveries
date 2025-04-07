@@ -47,8 +47,12 @@
 /* Private variables ---------------------------------------------------------*/
 SPI_HandleTypeDef hspi1;
 
+UART_HandleTypeDef huart2;
+
 osThreadId runTaskHandle;
 osThreadId readDataTaskHandle;
+osThreadId sendDataTaskHandle;
+osMessageQId Queue_1Handle;
 /* USER CODE BEGIN PV */
 MPU9250TypeDef MPU9250;
 AHRS_TypeDef AHRS;
@@ -58,14 +62,22 @@ int16_t Raw_Accel[3] = {0}, Raw_Gyro[3] = {0};
 
 float GX = 0, GY = 0, GZ = 0, AX = 0, AY = 0, AZ = 0;
 float Roll, Pitch, Yaw;
+
+typedef struct
+{
+	uint8_t Shifted_Roll;
+	uint8_t Shifted_Pitch;
+}IMUdata_t;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_SPI1_Init(void);
+static void MX_USART2_UART_Init(void);
 void StartRunTask(void const * argument);
 void StartReadDataTask(void const * argument);
+void StartSendDataTask(void const * argument);
 
 /* USER CODE BEGIN PFP */
 void IMU_Init(void);
@@ -108,6 +120,7 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_SPI1_Init();
+  MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -124,6 +137,11 @@ int main(void)
   /* start timers, add new ones, ... */
   /* USER CODE END RTOS_TIMERS */
 
+  /* Create the queue(s) */
+  /* definition and creation of Queue_1 */
+  osMessageQDef(Queue_1, 1, uint8_t);
+  Queue_1Handle = osMessageCreate(osMessageQ(Queue_1), NULL);
+
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
   /* USER CODE END RTOS_QUEUES */
@@ -134,8 +152,12 @@ int main(void)
   runTaskHandle = osThreadCreate(osThread(runTask), NULL);
 
   /* definition and creation of readDataTask */
-  osThreadDef(readDataTask, StartReadDataTask, osPriorityIdle, 0, 2048);
+  osThreadDef(readDataTask, StartReadDataTask, osPriorityIdle, 0, 512);
   readDataTaskHandle = osThreadCreate(osThread(readDataTask), NULL);
+
+  /* definition and creation of sendDataTask */
+  osThreadDef(sendDataTask, StartSendDataTask, osPriorityNormal, 0, 512);
+  sendDataTaskHandle = osThreadCreate(osThread(sendDataTask), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -241,6 +263,39 @@ static void MX_SPI1_Init(void)
 }
 
 /**
+  * @brief USART2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART2_UART_Init(void)
+{
+
+  /* USER CODE BEGIN USART2_Init 0 */
+
+  /* USER CODE END USART2_Init 0 */
+
+  /* USER CODE BEGIN USART2_Init 1 */
+
+  /* USER CODE END USART2_Init 1 */
+  huart2.Instance = USART2;
+  huart2.Init.BaudRate = 115200;
+  huart2.Init.WordLength = UART_WORDLENGTH_8B;
+  huart2.Init.StopBits = UART_STOPBITS_1;
+  huart2.Init.Parity = UART_PARITY_NONE;
+  huart2.Init.Mode = UART_MODE_TX_RX;
+  huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART2_Init 2 */
+
+  /* USER CODE END USART2_Init 2 */
+
+}
+
+/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -333,6 +388,7 @@ void IMU_UpdateAngles(float dt)
 {
     static int first_run = 1;
     static float last_roll, last_pitch;
+    IMUdata_t data;
 
     if(first_run)
     {
@@ -362,6 +418,11 @@ void IMU_UpdateAngles(float dt)
     // Store for next iteration
     last_roll = Roll;
     last_pitch = Pitch;
+
+    data.Shifted_Roll  = (Roll + 10) * 10;
+    data.Shifted_Pitch = (Pitch + 10) * 10;
+    osMessagePut(Queue_1Handle, &data, osWaitForever);
+    osDelay(100);
 }
 /* USER CODE END 4 */
 
@@ -411,6 +472,33 @@ void StartReadDataTask(void const * argument)
     IMU_UpdateAngles(dt);
   }
   /* USER CODE END StartReadDataTask */
+}
+
+/* USER CODE BEGIN Header_StartSendDataTask */
+/**
+* @brief Function implementing the sendDataTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartSendDataTask */
+void StartSendDataTask(void const * argument)
+{
+  /* USER CODE BEGIN StartSendDataTask */
+	IMUdata_t *data;
+	osEvent evt;
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+    evt = osMessageGet(Queue_1Handle, osWaitForever);
+    if (evt.status == osEventMessage)
+    {
+    	data = evt.value.p;
+    	printf("Roll ----> %d \r\n", data->Shifted_Roll);
+    	printf("Pitch ----> %d \r\n", data->Shifted_Pitch);
+    }
+  }
+  /* USER CODE END StartSendDataTask */
 }
 
 /**
