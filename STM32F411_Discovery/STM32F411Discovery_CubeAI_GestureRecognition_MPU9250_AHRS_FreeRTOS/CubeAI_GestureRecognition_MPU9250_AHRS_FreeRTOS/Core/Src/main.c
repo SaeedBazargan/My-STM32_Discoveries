@@ -22,8 +22,16 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "stdio.h"
+#include "string.h"
+#include "math.h"
+
 #include "HAL_MPU9250.h"
-#include "HAL_AHRS.h"
+
+#include "ai_datatypes_defines.h"
+#include "ai_platform.h"
+#include "imu_model.h"
+#include "imu_model_data.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -33,6 +41,14 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+
+/**
+ * @brief If you want to read sensor data and send it to Python, Debug should be set to 1.
+ * Otherwise, if you want to use the model to predict direction, Debug should be set to 0.
+*/
+#define Debug					1
+
+
 #define ZERO_MAX				20
 #define ZERO_MIN				-20
 #define RAD2DEG 				57.2957795131
@@ -45,17 +61,20 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+CRC_HandleTypeDef hcrc;
+
 SPI_HandleTypeDef hspi1;
 
 UART_HandleTypeDef huart2;
 
+osThreadId defaultTaskHandle;
+/* USER CODE BEGIN PV */
 osThreadId runTaskHandle;
 osThreadId readDataTaskHandle;
 osThreadId sendDataTaskHandle;
 osMessageQId Queue_1Handle;
-/* USER CODE BEGIN PV */
+
 MPU9250TypeDef MPU9250;
-AHRS_TypeDef AHRS;
 
 uint8_t IMU_rawData[14] = {0};
 int16_t Raw_Accel[3] = {0}, Raw_Gyro[3] = {0};
@@ -68,6 +87,7 @@ typedef struct
 	uint8_t Shifted_Roll;
 	uint8_t Shifted_Pitch;
 }IMUdata_t;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -75,11 +95,17 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_SPI1_Init(void);
 static void MX_USART2_UART_Init(void);
-void StartRunTask(void const * argument);
-void StartReadDataTask(void const * argument);
-void StartSendDataTask(void const * argument);
+static void MX_CRC_Init(void);
+void StartDefaultTask(void const * argument);
 
 /* USER CODE BEGIN PFP */
+void StartRunTask(void const * argument);
+void StartReadDataTask(void const * argument);
+
+#if Debug
+void StartSendDataTask(void const * argument);
+#endif
+
 void IMU_Init(void);
 void IMU_readRawData(void);
 void IMU_UpdateAngles(float dt);
@@ -87,7 +113,15 @@ void IMU_UpdateAngles(float dt);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+int _write(int file, char *ptr, int len)
+{
+	int i = 0;
+	for(i = 0; i < len; i++)
+	{
+		ITM_SendChar(*ptr++);
+	}
+	return len;
+}
 /* USER CODE END 0 */
 
 /**
@@ -121,6 +155,7 @@ int main(void)
   MX_GPIO_Init();
   MX_SPI1_Init();
   MX_USART2_UART_Init();
+  MX_CRC_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -137,16 +172,21 @@ int main(void)
   /* start timers, add new ones, ... */
   /* USER CODE END RTOS_TIMERS */
 
-  /* Create the queue(s) */
-  /* definition and creation of Queue_1 */
-  osMessageQDef(Queue_1, 1, uint8_t);
-  Queue_1Handle = osMessageCreate(osMessageQ(Queue_1), NULL);
-
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
+#if Debug
+  osMessageQDef(Queue_1, 1, sizeof(IMUdata_t));
+  Queue_1Handle = osMessageCreate(osMessageQ(Queue_1), NULL);
+#endif
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
+  /* definition and creation of defaultTask */
+  osThreadDef(defaultTask, StartDefaultTask, osPriorityIdle, 0, 128);
+  defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
+
+  /* USER CODE BEGIN RTOS_THREADS */
+  /* add threads, ... */
   /* definition and creation of runTask */
   osThreadDef(runTask, StartRunTask, osPriorityNormal, 0, 128);
   runTaskHandle = osThreadCreate(osThread(runTask), NULL);
@@ -154,13 +194,11 @@ int main(void)
   /* definition and creation of readDataTask */
   osThreadDef(readDataTask, StartReadDataTask, osPriorityIdle, 0, 512);
   readDataTaskHandle = osThreadCreate(osThread(readDataTask), NULL);
-
+#if Debug
   /* definition and creation of sendDataTask */
   osThreadDef(sendDataTask, StartSendDataTask, osPriorityNormal, 0, 512);
   sendDataTaskHandle = osThreadCreate(osThread(sendDataTask), NULL);
-
-  /* USER CODE BEGIN RTOS_THREADS */
-  /* add threads, ... */
+#endif
   /* USER CODE END RTOS_THREADS */
 
   /* Start scheduler */
@@ -222,6 +260,32 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+}
+
+/**
+  * @brief CRC Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_CRC_Init(void)
+{
+
+  /* USER CODE BEGIN CRC_Init 0 */
+
+  /* USER CODE END CRC_Init 0 */
+
+  /* USER CODE BEGIN CRC_Init 1 */
+
+  /* USER CODE END CRC_Init 1 */
+  hcrc.Instance = CRC;
+  if (HAL_CRC_Init(&hcrc) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN CRC_Init 2 */
+
+  /* USER CODE END CRC_Init 2 */
+
 }
 
 /**
@@ -337,6 +401,7 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+// <---- ------------ IMU Initialized ------------ ---->
 void IMU_Init(void)
 {
 	MPU9250.PWR_MGMT1	= CLKSEL_1;						// CLOCK_SEL_PLL
@@ -351,7 +416,7 @@ void IMU_Init(void)
 		Error_Handler();
 	}
 }
-
+// <---- ------------ IMU Read Raw Data ------------ ---->
 void IMU_readRawData(void)
 {
 	// <---- ------------ Merging Data to get real IMU data ------------ ---->
@@ -384,10 +449,12 @@ void IMU_readRawData(void)
 	GZ = GZ / (180.0 / M_PI);
 }
 
+// <---- ------------ Convert raw data to the Roll and Pitch ------------ ---->
 void IMU_UpdateAngles(float dt)
 {
     static int first_run = 1;
     static float last_roll, last_pitch;
+
     IMUdata_t data;
 
     if(first_run)
@@ -424,43 +491,26 @@ void IMU_UpdateAngles(float dt)
     osMessagePut(Queue_1Handle, &data, osWaitForever);
     osDelay(100);
 }
-/* USER CODE END 4 */
 
-/* USER CODE BEGIN Header_StartRunTask */
-/**
-  * @brief  Function implementing the runTask thread.
-  * @param  argument: Not used
-  * @retval None
-  */
-/* USER CODE END Header_StartRunTask */
+// <---- ------------ Check RunTime Task ------------ ---->
 void StartRunTask(void const * argument)
 {
-  /* USER CODE BEGIN 5 */
-  /* Infinite loop */
   for(;;)
   {
 	HAL_GPIO_TogglePin(LED_Run_GPIO_Port, LED_Run_Pin);
     osDelay(500);
   }
-  /* USER CODE END 5 */
 }
 
-/* USER CODE BEGIN Header_StartReadDataTask */
-/**
-* @brief Function implementing the readDataTask thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_StartReadDataTask */
+// <---- ------------ Reading raw data and converting Task ------------ ---->
 void StartReadDataTask(void const * argument)
 {
-  /* USER CODE BEGIN StartReadDataTask */
   uint32_t last_time = HAL_GetTick();
   uint32_t now = HAL_GetTick();
   float dt = (now - last_time) * 0.001f;
 
   IMU_Init();
-  /* Infinite loop */
+
   for(;;)
   {
 	IMU_readRawData();
@@ -471,34 +521,56 @@ void StartReadDataTask(void const * argument)
 
     IMU_UpdateAngles(dt);
   }
-  /* USER CODE END StartReadDataTask */
 }
 
-/* USER CODE BEGIN Header_StartSendDataTask */
-/**
-* @brief Function implementing the sendDataTask thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_StartSendDataTask */
+// <---- ------------ Sending to the PC Task ------------ ---->
 void StartSendDataTask(void const * argument)
 {
-  /* USER CODE BEGIN StartSendDataTask */
-	IMUdata_t *data;
-	osEvent evt;
-  /* Infinite loop */
+	uint8_t buf[100];
+  int buf_len;
+
+  IMUdata_t *data;
+  osEvent evt;
+
   for(;;)
   {
-    osDelay(1);
     evt = osMessageGet(Queue_1Handle, osWaitForever);
     if (evt.status == osEventMessage)
     {
     	data = evt.value.p;
+
     	printf("Roll ----> %d \r\n", data->Shifted_Roll);
+    	buf_len = sprintf(buf, "Roll ----> %d \r\n", data->Shifted_Roll);
+    	HAL_UART_Transmit(&huart2, buf, buf_len, 100);
+    	memset(buf, 0, buf_len);
+
     	printf("Pitch ----> %d \r\n", data->Shifted_Pitch);
+    	buf_len = sprintf(buf, "Pitch ----> %d \r\n", data->Shifted_Pitch);
+    	HAL_UART_Transmit(&huart2, buf, buf_len, 100);
+    	memset(buf, 0, buf_len);
+
     }
   }
-  /* USER CODE END StartSendDataTask */
+}
+/* USER CODE END 4 */
+
+/* USER CODE BEGIN Header_StartDefaultTask */
+/**
+  * @brief  Function implementing the defaultTask thread.
+  * @param  argument: Not used
+  * @retval None
+  */
+/* USER CODE END Header_StartDefaultTask */
+void StartDefaultTask(void const * argument)
+{
+  /* USER CODE BEGIN 5 */
+  /* Infinite loop */
+  for(;;)
+  {
+	HAL_GPIO_TogglePin(LED_Run_GPIO_Port, LED_Run_Pin);
+    osDelay(500);
+  }
+  /* USER CODE END 5 */
 }
 
 /**

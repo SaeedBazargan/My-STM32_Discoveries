@@ -1,0 +1,160 @@
+STEdgeAI Core v9.0.0-19802
+Created date          : 2025-04-08 15:10:10
+Parameters            : generate --target stm32f4 --name imu_model -m E:/sbzrgn/My-STM32_Discoveries/STM32F411_Discovery/STM32F411Discovery_CubeAI_GestureRecognition_MPU9250_AHRS_FreeRTOS/model.tflite --compression none --verbosity 1 --allocate-inputs --allocate-outputs --workspace C:/Users/SE8D9~1.BAZ/AppData/Local/Temp/mxAI_workspace16822087182750010752977319014304396 --output C:/Users/s.bazargan/.stm32cubemx/imu_model_output
+
+Exec/report summary (generate)
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+model file         :   E:\sbzrgn\My-STM32_Discoveries\STM32F411_Discovery\STM32F411Discovery_CubeAI_GestureRecognition_MPU9250_AHRS_FreeRTOS\model.tflite   
+type               :   tflite                                                                                                                               
+c_name             :   imu_model                                                                                                                            
+compression        :   none                                                                                                                                 
+options            :   allocate-inputs, allocate-outputs                                                                                                    
+optimization       :   balanced                                                                                                                             
+target/series      :   stm32f4                                                                                                                              
+workspace dir      :   C:\Users\SE8D9~1.BAZ\AppData\Local\Temp\mxAI_workspace16822087182750010752977319014304396                                            
+output dir         :   C:\Users\s.bazargan\.stm32cubemx\imu_model_output                                                                                    
+model_fmt          :   ss/sa per channel                                                                                                                    
+model_name         :   model                                                                                                                                
+model_hash         :   0x8bd27320a8ec794cfeb4d5413323a1e1                                                                                                   
+params #           :   8,835 items (9.20 KiB)                                                                                                               
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+input 1/1          :   'serving_default_keras_tensor_60', int8(1x2), 2 Bytes, QLinear(0.023367284,4,int8), activations                                      
+output 1/1         :   'nl_3', int8(1x3), 3 Bytes, QLinear(0.003906250,-128,int8), activations                                                              
+macc               :   8,880                                                                                                                                
+weights (ro)       :   9,420 B (9.20 KiB) (1 segment) / -25,920(-73.3%) vs float model                                                                      
+activations (rw)   :   1,416 B (1.38 KiB) (1 segment) *                                                                                                     
+ram (total)        :   1,416 B (1.38 KiB) = 1,416 + 0 + 0                                                                                                   
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+(*) 'input'/'output' buffers can be used from the activations buffer
+
+Model name - model
+------ ------------------------------------------- -------------- ------------- ------- --------------------------------- --- --------------- ----------------- --------------------- 
+m_id   layer (type,original)                       oshape         param/size       macc                      connected to   | c_size          c_macc            c_type                
+------ ------------------------------------------- -------------- ------------- ------- --------------------------------- --- --------------- ----------------- --------------------- 
+0      serving_default_keras_tensor_60 (Input, )   [b:1,c:2]                                                                | +768(+100.0%)   +384(+100.0%)     Dense_[0]             
+       tfl_pseudo_qconst5 (Placeholder, )          [h:128,c:2]    256/256                                                   | -256(-100.0%)                     
+       tfl_pseudo_qconst4 (Placeholder, )          [c:128]        128/512                                                   | -512(-100.0%)                     
+       gemm_0 (Gemm, FULLY_CONNECTED)              [b:1,c:128]                      384   serving_default_keras_tensor_60   |                 -384(-100.0%)     
+                                                                                                       tfl_pseudo_qconst5   | 
+                                                                                                       tfl_pseudo_qconst4   | 
+       nl_0_nl (Nonlinearity, FULLY_CONNECTED)     [b:1,c:128]                      128                            gemm_0   |                 -128(-100.0%)     
+------ ------------------------------------------- -------------- ------------- ------- --------------------------------- --- --------------- ----------------- --------------------- 
+1      tfl_pseudo_qconst3 (Placeholder, )          [h:64,c:128]   8,192/8,192                                               | +256(+3.1%)     +8,256(+100.0%)   Dense_[1]             
+       tfl_pseudo_qconst2 (Placeholder, )          [c:64]         64/256                                                    | -256(-100.0%)                     
+       gemm_1 (Gemm, FULLY_CONNECTED)              [b:1,c:64]                     8,256                           nl_0_nl   |                 -8,256(-100.0%)   
+                                                                                                       tfl_pseudo_qconst3   | 
+                                                                                                       tfl_pseudo_qconst2   | 
+       nl_1_nl (Nonlinearity, FULLY_CONNECTED)     [b:1,c:64]                        64                            gemm_1   |                 -64(-100.0%)      
+------ ------------------------------------------- -------------- ------------- ------- --------------------------------- --- --------------- ----------------- --------------------- 
+2      tfl_pseudo_qconst1 (Placeholder, )          [h:3,c:64]     192/192                                                   | +12(+6.2%)      +195(+100.0%)     Dense_[2]             
+       tfl_pseudo_qconst (Placeholder, )           [c:3]          3/12                                                      | -12(-100.0%)                      
+       gemm_2 (Gemm, FULLY_CONNECTED)              [b:1,c:3]                        195                           nl_1_nl   |                 -195(-100.0%)     
+                                                                                                       tfl_pseudo_qconst1   | 
+                                                                                                        tfl_pseudo_qconst   | 
+------ ------------------------------------------- -------------- ------------- ------- --------------------------------- --- --------------- ----------------- --------------------- 
+3      nl_3 (Nonlinearity, SOFTMAX)                [b:1,c:3]                         45                            gemm_2   |                                   Nonlinearity_[o][3]   
+------ ------------------------------------------- -------------- ------------- ------- --------------------------------- --- --------------- ----------------- --------------------- 
+model/c-model: macc=9,072/8,880 -192(-2.1%) weights=9,420/9,420  activations=--/1,416 io=--/0
+
+
+
+Generated C-graph summary
+------------------------------------------------------------------------------------------------------------------------
+model name            : model
+c-name                : imu_model
+c-node #              : 4
+c-array #             : 15
+activations size      : 1416 (1 segment)
+weights size          : 9420 (1 segment)
+macc                  : 8880
+inputs                : ['serving_default_keras_tensor_60_output']
+outputs               : ['nl_3_output']
+
+C-Arrays (15)
+------ ---------------------------------------- ----------- ------------------------- ----------- --------- 
+c_id   name (*_array)                           item/size   domain/mem-pool           c-type      comment   
+------ ---------------------------------------- ----------- ------------------------- ----------- --------- 
+0      gemm_0_bias                              128/512     weights/weights           const s32             
+1      gemm_0_output                            128/128     activations/**default**   s8                    
+2      gemm_0_scratch0                          642/1284    activations/**default**   s16                   
+3      gemm_0_weights                           256/256     weights/weights           const s8              
+4      gemm_1_bias                              64/256      weights/weights           const s32             
+5      gemm_1_output                            64/64       activations/**default**   s8                    
+6      gemm_1_scratch0                          448/896     activations/**default**   s16                   
+7      gemm_1_weights                           8192/8192   weights/weights           const s8              
+8      gemm_2_bias                              3/12        weights/weights           const s32             
+9      gemm_2_output                            3/3         activations/**default**   s8                    
+10     gemm_2_scratch0                          79/158      activations/**default**   s16                   
+11     gemm_2_weights                           192/192     weights/weights           const s8              
+12     nl_3_output                              3/3         activations/**default**   s8          /output   
+13     nl_3_scratch0                            3/12        activations/**default**   s32                   
+14     serving_default_keras_tensor_60_output   2/2         activations/**default**   s8          /input    
+------ ---------------------------------------- ----------- ------------------------- ----------- --------- 
+
+C-Layers (4)
+------ ---------------- ---- --------------- ------ ------ ------------------------------------------- ------------------ 
+c_id   name (*_layer)   id   layer_type      macc   rom    tensors                                     shape (array id)   
+------ ---------------- ---- --------------- ------ ------ ------------------------------------------- ------------------ 
+0      gemm_0           0    Dense           384    768    I: serving_default_keras_tensor_60_output   int8(1x2) (14)     
+                                                           S: gemm_0_scratch0                                             
+                                                           W: gemm_0_weights                           int8(128x2) (3)    
+                                                           W: gemm_0_bias                              int32(128) (0)     
+                                                           O: gemm_0_output                            int8(1x128) (1)    
+------ ---------------- ---- --------------- ------ ------ ------------------------------------------- ------------------ 
+1      gemm_1           1    Dense           8256   8448   I: gemm_0_output                            int8(1x128) (1)    
+                                                           S: gemm_1_scratch0                                             
+                                                           W: gemm_1_weights                           int8(64x128) (7)   
+                                                           W: gemm_1_bias                              int32(64) (4)      
+                                                           O: gemm_1_output                            int8(1x64) (5)     
+------ ---------------- ---- --------------- ------ ------ ------------------------------------------- ------------------ 
+2      gemm_2           2    Dense           195    204    I: gemm_1_output                            int8(1x64) (5)     
+                                                           S: gemm_2_scratch0                                             
+                                                           W: gemm_2_weights                           int8(3x64) (11)    
+                                                           W: gemm_2_bias                              int32(3) (8)       
+                                                           O: gemm_2_output                            int8(1x3) (9)      
+------ ---------------- ---- --------------- ------ ------ ------------------------------------------- ------------------ 
+3      nl_3             3    Nonlinearity    45     0      I: gemm_2_output                            int8(1x3) (9)      
+                                                           S: nl_3_scratch0                                               
+                                                           O: nl_3_output                              int8(1x3) (12)     
+------ ---------------- ---- --------------- ------ ------ ------------------------------------------- ------------------ 
+
+
+
+Number of operations per c-layer
+------- ------ --------------------- ------- ------------ 
+c_id    m_id   name (type)               #op         type 
+------- ------ --------------------- ------- ------------ 
+0       0      gemm_0 (Dense)            384   smul_s8_s8 
+1       1      gemm_1 (Dense)          8,256   smul_s8_s8 
+2       2      gemm_2 (Dense)            195   smul_s8_s8 
+3       3      nl_3 (Nonlinearity)        45     op_s8_s8 
+------- ------ --------------------- ------- ------------ 
+total                                  8,880 
+
+Number of operation types
+---------------- ------- ----------- 
+operation type         #           % 
+---------------- ------- ----------- 
+smul_s8_s8         8,835       99.5% 
+op_s8_s8              45        0.5% 
+
+Complexity report (model)
+------ --------------------------------- ------------------------- ------------------------- ------ 
+m_id   name                              c_macc                    c_rom                     c_id   
+------ --------------------------------- ------------------------- ------------------------- ------ 
+0      serving_default_keras_tensor_60   |                  4.3%   ||                 8.2%   [0]    
+1      tfl_pseudo_qconst3                ||||||||||||||||  93.0%   ||||||||||||||||  89.7%   [1]    
+2      tfl_pseudo_qconst1                |                  2.2%   |                  2.2%   [2]    
+3      nl_3                              |                  0.5%   |                  0.0%   [3]    
+------ --------------------------------- ------------------------- ------------------------- ------ 
+macc=8,880 weights=9,420 act=1,416 ram_io=0
+
+Generated files (7)
+--------------------------------------------------------------------------- 
+C:\Users\s.bazargan\.stm32cubemx\imu_model_output\imu_model_data_params.h   
+C:\Users\s.bazargan\.stm32cubemx\imu_model_output\imu_model_data_params.c   
+C:\Users\s.bazargan\.stm32cubemx\imu_model_output\imu_model_data.h          
+C:\Users\s.bazargan\.stm32cubemx\imu_model_output\imu_model_data.c          
+C:\Users\s.bazargan\.stm32cubemx\imu_model_output\imu_model_config.h        
+C:\Users\s.bazargan\.stm32cubemx\imu_model_output\imu_model.h               
+C:\Users\s.bazargan\.stm32cubemx\imu_model_output\imu_model.c               

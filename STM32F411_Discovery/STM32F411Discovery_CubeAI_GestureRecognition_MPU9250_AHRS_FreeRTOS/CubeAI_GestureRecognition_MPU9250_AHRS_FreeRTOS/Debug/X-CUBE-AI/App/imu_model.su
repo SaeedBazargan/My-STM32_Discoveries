@@ -1,0 +1,13 @@
+../X-CUBE-AI/App/imu_model.c:413:9:imu_model_configure_activations	16	static
+../X-CUBE-AI/App/imu_model.c:450:9:imu_model_configure_weights	16	static
+../X-CUBE-AI/App/imu_model.c:489:9:ai_imu_model_get_info	160	static
+../X-CUBE-AI/App/imu_model.c:536:9:ai_imu_model_get_report	160	static
+../X-CUBE-AI/App/imu_model.c:583:10:ai_imu_model_get_error	16	static
+../X-CUBE-AI/App/imu_model.c:590:10:ai_imu_model_create	24	static
+../X-CUBE-AI/App/imu_model.c:601:10:ai_imu_model_create_and_init	88	static
+../X-CUBE-AI/App/imu_model.c:636:12:ai_imu_model_inputs_get	16	static
+../X-CUBE-AI/App/imu_model.c:647:12:ai_imu_model_outputs_get	16	static
+../X-CUBE-AI/App/imu_model.c:658:11:ai_imu_model_destroy	16	static
+../X-CUBE-AI/App/imu_model.c:665:9:ai_imu_model_init	24	static
+../X-CUBE-AI/App/imu_model.c:682:8:ai_imu_model_run	24	static
+../X-CUBE-AI/App/imu_model.c:690:8:ai_imu_model_forward	16	static

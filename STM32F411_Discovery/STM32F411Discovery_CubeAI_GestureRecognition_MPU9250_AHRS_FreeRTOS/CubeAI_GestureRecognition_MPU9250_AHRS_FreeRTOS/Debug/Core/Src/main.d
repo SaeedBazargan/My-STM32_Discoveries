@@ -19,6 +19,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_crc.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
@@ -45,8 +46,13 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
- C:/Users/Bazar/Desktop/sbzrgn/STM32F411Discovery_CubeAI_GestureRecognition_MPU9250_AHRS_FreeRTOS/CubeAI_GestureRecognition_MPU9250_AHRS_FreeRTOS/Lib/HAL_MPU9250.h \
- C:/Users/Bazar/Desktop/sbzrgn/STM32F411Discovery_CubeAI_GestureRecognition_MPU9250_AHRS_FreeRTOS/CubeAI_GestureRecognition_MPU9250_AHRS_FreeRTOS/Lib/HAL_AHRS.h
+ E:/sbzrgn/My-STM32_Discoveries/STM32F411_Discovery/STM32F411Discovery_CubeAI_GestureRecognition_MPU9250_AHRS_FreeRTOS/CubeAI_GestureRecognition_MPU9250_AHRS_FreeRTOS/Lib/HAL_MPU9250.h \
+ ../Middlewares/ST/AI/Inc/ai_datatypes_defines.h \
+ ../Middlewares/ST/AI/Inc/ai_platform.h \
+ ../Middlewares/ST/AI/Inc/core_assert.h \
+ ../Middlewares/ST/AI/Inc/ai_platform.h ../X-CUBE-AI/App/imu_model.h \
+ ../X-CUBE-AI/App/imu_model_config.h ../X-CUBE-AI/App/imu_model_data.h \
+ ../X-CUBE-AI/App/imu_model_data_params.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -68,6 +74,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_crc.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h:
@@ -94,5 +101,12 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
-C:/Users/Bazar/Desktop/sbzrgn/STM32F411Discovery_CubeAI_GestureRecognition_MPU9250_AHRS_FreeRTOS/CubeAI_GestureRecognition_MPU9250_AHRS_FreeRTOS/Lib/HAL_MPU9250.h:
-C:/Users/Bazar/Desktop/sbzrgn/STM32F411Discovery_CubeAI_GestureRecognition_MPU9250_AHRS_FreeRTOS/CubeAI_GestureRecognition_MPU9250_AHRS_FreeRTOS/Lib/HAL_AHRS.h:
+E:/sbzrgn/My-STM32_Discoveries/STM32F411_Discovery/STM32F411Discovery_CubeAI_GestureRecognition_MPU9250_AHRS_FreeRTOS/CubeAI_GestureRecognition_MPU9250_AHRS_FreeRTOS/Lib/HAL_MPU9250.h:
+../Middlewares/ST/AI/Inc/ai_datatypes_defines.h:
+../Middlewares/ST/AI/Inc/ai_platform.h:
+../Middlewares/ST/AI/Inc/core_assert.h:
+../Middlewares/ST/AI/Inc/ai_platform.h:
+../X-CUBE-AI/App/imu_model.h:
+../X-CUBE-AI/App/imu_model_config.h:
+../X-CUBE-AI/App/imu_model_data.h:
+../X-CUBE-AI/App/imu_model_data_params.h:
