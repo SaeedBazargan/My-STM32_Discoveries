@@ -88,6 +88,14 @@ typedef struct
 	uint8_t Shifted_Pitch;
 }IMUdata_t;
 
+// AI buffers
+AI_ALIGNED(4) ai_u8 activations[AI_IMU_MODEL_DATA_ACTIVATIONS_SIZE];
+AI_ALIGNED(4) ai_u8 in_data[AI_IMU_MODEL_IN_1_SIZE_BYTES];
+AI_ALIGNED(4) ai_u8 out_data[AI_IMU_MODEL_OUT_1_SIZE_BYTES];
+
+ai_handle imu_model = AI_HANDLE_NULL;
+ai_buffer *ai_input;
+ai_buffer *ai_output;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -109,6 +117,8 @@ void StartSendDataTask(void const * argument);
 void IMU_Init(void);
 void IMU_readRawData(void);
 void IMU_UpdateAngles(float dt);
+
+int run_imu_model(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -157,7 +167,7 @@ int main(void)
   MX_USART2_UART_Init();
   MX_CRC_Init();
   /* USER CODE BEGIN 2 */
-
+  run_imu_model();
   /* USER CODE END 2 */
 
   /* USER CODE BEGIN RTOS_MUTEX */
@@ -551,6 +561,85 @@ void StartSendDataTask(void const * argument)
 
     }
   }
+}
+
+
+int run_imu_model(void)
+{
+	printf("Initializing IMU Model...\n");
+
+	    ai_error err;
+	    ai_network_report report;
+
+	    // Initialize model instance
+	    const ai_handle act[] = { activations };
+	    err = ai_imu_model_create_and_init(&imu_model, act, NULL);
+	    if (err.type != AI_ERROR_NONE)
+	    {
+	        printf("Error: could not create NN instance\n");
+	        return;
+	    }
+
+	    // Get model report (optional, but useful)
+	    if (!ai_imu_model_get_report(imu_model, &report))
+	    {
+	        printf("Error: get report failed\n");
+	        return;
+	    }
+
+	    ai_input = &report.inputs[0];
+	    ai_output = &report.outputs[0];
+
+	    // Assign input/output buffers
+	    ai_input[0].data = AI_HANDLE_PTR(in_data);
+	    ai_output[0].data = AI_HANDLE_PTR(out_data);
+
+	    printf("Model name      : %s\n", report.model_name);
+	    printf("Input shape     : (%d, %d, %d)\n",
+	        AI_BUFFER_SHAPE_ELEM(ai_input, AI_SHAPE_HEIGHT),
+	        AI_BUFFER_SHAPE_ELEM(ai_input, AI_SHAPE_WIDTH),
+	        AI_BUFFER_SHAPE_ELEM(ai_input, AI_SHAPE_CHANNEL));
+	    printf("Output shape    : (%d, %d, %d)\n",
+	        AI_BUFFER_SHAPE_ELEM(ai_output, AI_SHAPE_HEIGHT),
+	        AI_BUFFER_SHAPE_ELEM(ai_output, AI_SHAPE_WIDTH),
+	        AI_BUFFER_SHAPE_ELEM(ai_output, AI_SHAPE_CHANNEL));
+
+	    // ==== STEP 1: Prepare input ====
+	    float roll = 102.0f;
+	    float pitch = 104.0f;
+
+	    // Use same normalization as training
+	    float mean_roll = 102.47f;
+	    float std_roll  = 4.02f;
+	    float mean_pitch = 104.19f;
+	    float std_pitch  = 3.99f;
+
+	    ((ai_float *)in_data)[0] = (roll - mean_roll) / std_roll;
+	    ((ai_float *)in_data)[1] = (pitch - mean_pitch) / std_pitch;
+
+	    // ==== STEP 2: Run inference ====
+	    ai_i32 batch = ai_imu_model_run(imu_model, ai_input, ai_output);
+	    if (batch != 1)
+	    {
+	        printf("Error: inference failed\n");
+	        return;
+	    }
+
+	    // ==== STEP 3: Interpret output ====
+	    ai_float *output = (ai_float *)out_data;
+	    int predicted_label = 0;
+	    float max_score = output[0];
+	    for (int i = 1; i < 3; i++)
+	    {
+	        if (output[i] > max_score)
+	        {
+	            max_score = output[i];
+	            predicted_label = i;
+	        }
+	    }
+
+	    const char* label_names[] = {"Left", "Right", "Motionless"};
+	    printf("Prediction: %s (score: %.2f)\n", label_names[predicted_label], max_score);
 }
 /* USER CODE END 4 */
 

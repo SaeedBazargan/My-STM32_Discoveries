@@ -67,7 +67,7 @@ main-build: CubeAI_GestureRecognition_MPU9250_AHRS_FreeRTOS.elf secondary-output
 
 # Tool invocations
 CubeAI_GestureRecognition_MPU9250_AHRS_FreeRTOS.elf CubeAI_GestureRecognition_MPU9250_AHRS_FreeRTOS.map: $(OBJS) $(USER_OBJS) E:\sbzrgn\My-STM32_Discoveries\STM32F411_Discovery\STM32F411Discovery_CubeAI_GestureRecognition_MPU9250_AHRS_FreeRTOS\CubeAI_GestureRecognition_MPU9250_AHRS_FreeRTOS\STM32F411VETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "CubeAI_GestureRecognition_MPU9250_AHRS_FreeRTOS.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\sbzrgn\My-STM32_Discoveries\STM32F411_Discovery\STM32F411Discovery_CubeAI_GestureRecognition_MPU9250_AHRS_FreeRTOS\CubeAI_GestureRecognition_MPU9250_AHRS_FreeRTOS\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeAI_GestureRecognition_MPU9250_AHRS_FreeRTOS.map" -Wl,--gc-sections -static -L../Middlewares/ST/AI/Lib --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+	arm-none-eabi-gcc -o "CubeAI_GestureRecognition_MPU9250_AHRS_FreeRTOS.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\sbzrgn\My-STM32_Discoveries\STM32F411_Discovery\STM32F411Discovery_CubeAI_GestureRecognition_MPU9250_AHRS_FreeRTOS\CubeAI_GestureRecognition_MPU9250_AHRS_FreeRTOS\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeAI_GestureRecognition_MPU9250_AHRS_FreeRTOS.map" -Wl,--gc-sections -static -L../Middlewares/ST/AI/Lib -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

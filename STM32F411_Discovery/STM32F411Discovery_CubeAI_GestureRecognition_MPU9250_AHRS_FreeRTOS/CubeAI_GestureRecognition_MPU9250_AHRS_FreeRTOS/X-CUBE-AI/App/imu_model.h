@@ -2,7 +2,7 @@
   ******************************************************************************
   * @file    imu_model.h
   * @author  AST Embedded Analytics Research Platform
-  * @date    Tue Apr  8 15:10:10 2025
+  * @date    Wed Apr  9 15:08:46 2025
   * @brief   AI Tool Automatic Code Generator for Embedded NN computing
   ******************************************************************************
   * @attention
@@ -23,7 +23,7 @@
 
 /******************************************************************************/
 #define AI_IMU_MODEL_MODEL_NAME          "imu_model"
-#define AI_IMU_MODEL_ORIGIN_MODEL_NAME   "model"
+#define AI_IMU_MODEL_ORIGIN_MODEL_NAME   "imu_model"
 
 /******************************************************************************/
 #define AI_IMU_MODEL_ACTIVATIONS_ALIGNMENT   (4)
