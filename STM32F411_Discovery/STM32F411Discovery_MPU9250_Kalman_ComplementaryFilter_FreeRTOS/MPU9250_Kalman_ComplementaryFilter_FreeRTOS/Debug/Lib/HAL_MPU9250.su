@@ -1,0 +1,3 @@
+../Lib/HAL_MPU9250.c:191:16:MPU9250_ReadData	32	static
+../Lib/HAL_MPU9250.c:206:16:MPU9250_WriteData	24	static
+../Lib/HAL_MPU9250.c:13:16:MPU9250_Init	24	static

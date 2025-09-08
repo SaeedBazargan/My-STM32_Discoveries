@@ -1,3 +1,0 @@
-0: Left
-1: Motionless
-2: Right
