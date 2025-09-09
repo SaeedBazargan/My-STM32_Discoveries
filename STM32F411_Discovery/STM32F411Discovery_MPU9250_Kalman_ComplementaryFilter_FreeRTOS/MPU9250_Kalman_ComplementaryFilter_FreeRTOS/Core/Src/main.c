@@ -24,6 +24,7 @@
 /* USER CODE BEGIN Includes */
 #include "HAL_MPU9250.h"
 #include "IMU_KalmanFilter.h"
+#include "IMU_ComplementaryFilter.h"
 
 #include "stdio.h"
 #include "string.h"
@@ -37,10 +38,14 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define KalmanFilter_En					0x00
+#define ComplementaryFilter_En			0x01
+#define N_KalmanFilter					100
+#define N_ComplementaryFilter			200
+
 // <---- --- IMU Defines --- ---->
 #define ZERO_MAX				20
 #define ZERO_MIN				-20
-#define N 						100
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -63,6 +68,7 @@ osMessageQId Queue_1Handle;
 // <---- --- IMU Variables --- ---->
 MPU9250TypeDef MPU9250;
 KalmanFilter kf;
+ComplementaryFilter cf;
 
 uint8_t IMU_rawData[14] = {0};
 typedef struct
@@ -73,8 +79,8 @@ typedef struct
 
 float GX = 0, GY = 0, GZ = 0, AX = 0, AY = 0, AZ = 0;
 float phi, theta;
-float phi_acc_samples[N];
-float theta_acc_samples[N];
+float phi_acc_samples[N_KalmanFilter];
+float theta_acc_samples[N_KalmanFilter];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -171,12 +177,13 @@ int main(void)
   /* add threads, ... */
   osThreadDef(readRawDataTask, StartReadRawDataTask, osPriorityAboveNormal, 0, 1024);
   readRawDataTaskHandle = osThreadCreate(osThread(readRawDataTask), NULL);
-
+#if KalmanFilter_En
   osThreadDef(kalmanFilterTask, StartKalmanFilterTask, osPriorityNormal, 0, 1024);
   kalmanFilterTaskHandle = osThreadCreate(osThread(kalmanFilterTask), NULL);
-
+#elif ComplementaryFilter_En
   osThreadDef(complementaryFilterTask, StartComplementaryFilterTask, osPriorityNormal, 0, 1024);
   complementaryFilterTaskHandle = osThreadCreate(osThread(complementaryFilterTask), NULL);
+#endif
   /* USER CODE END RTOS_THREADS */
 
   /* Start scheduler */
@@ -381,23 +388,43 @@ void IMU_readRawData(void)
 void StartReadRawDataTask(void const * argument)
 {
 
+//	float dt = 0.0f;
+//
+//	IMU_Init();
+//	Kalman_Init(&kf);
+//
+//	for(;;)
+//	{
+//		IMU_readRawData();
+//		Kalman_Get_AccelAngles(AZ, AY, AZ, &phi, &theta);
+//		Kalman_Calibrate(&kf, phi, theta, N_KalmanFilter);
+//
+//		Kalman_Update(&kf, GX, GY, GZ, AX, AY, AZ, dt);
+//
+//		// Get filtered angles
+//		float roll  = Kalman_Get_Roll(&kf);
+//		float pitch = Kalman_Get_Pitch(&kf);
+//
+//		printf("roll: %.2f \n", roll);
+//		printf("pitch: %.2f \n", pitch);
+//
+//		osDelay(1);
+//	}
+
 	float dt = 0.0f;
 
-
 	IMU_Init();
-	kalman_init(&kf);
+	Complementary_Init(&cf);
 
 	for(;;)
 	{
 		IMU_readRawData();
-		Get_AccelAngles(AZ, AY, AZ, &phi, &theta);
-		kalman_calibrate(&kf, phi, theta, N);
-
-		kalman_update(&kf, GX, GY, GZ, AX, AY, AZ, dt);
+		Get_GyroBias(&cf, GX, GY, GZ, N_ComplementaryFilter);
+		Complementary_Update(&cf, GX, GY, GZ, AX, AY, AZ, dt);
 
 		// Get filtered angles
-		float roll  = kalman_get_roll(&kf);
-		float pitch = kalman_get_pitch(&kf);
+		float roll  = Complementary_Get_Roll(&cf);
+		float pitch = Complementary_Get_Pitch(&cf);
 
 		printf("roll: %.2f \n", roll);
 		printf("pitch: %.2f \n", pitch);

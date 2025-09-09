@@ -14,7 +14,7 @@
 #endif
 
 // <---- ------ Kalman Filter init ------ ---->
-void kalman_init(KalmanFilter *kf)
+void Kalman_Init(KalmanFilter *kf)
 {
     memset(kf, 0, sizeof(KalmanFilter));
 
@@ -49,7 +49,7 @@ void kalman_init(KalmanFilter *kf)
 }
 
 // <---- ------ Calibration: average offsets ------ ---->
-void kalman_calibrate(KalmanFilter *kf, float phi_acc_samples, float theta_acc_samples, int N)
+void Kalman_Calibrate(KalmanFilter *kf, float phi_acc_samples, float theta_acc_samples, int N)
 {
     float phi_sum = 0, theta_sum = 0;
 
@@ -73,7 +73,7 @@ void kalman_calibrate(KalmanFilter *kf, float phi_acc_samples, float theta_acc_s
 }
 
 // <---- ------ Update filter ------ ---->
-void kalman_update(KalmanFilter *kf, float GX, float GY, float GZ, float AX, float AY, float AZ, float dt)
+void Kalman_Update(KalmanFilter *kf, float GX, float GY, float GZ, float AX, float AY, float AZ, float dt)
 {
 	if(!kf->calibrated)
 		return;
@@ -85,7 +85,7 @@ void kalman_update(KalmanFilter *kf, float GX, float GY, float GZ, float AX, flo
     // Accelerometer angles
     float phi_acc;
     float theta_acc;
-    Get_AccelAngles(AX, AY, AZ, &phi_acc, &theta_acc);
+    Kalman_Get_AccelAngles(AX, AY, AZ, &phi_acc, &theta_acc);
     phi_acc -= kf->phi_offset;
     theta_acc -= kf->theta_offset;
 
@@ -244,20 +244,20 @@ void kalman_update(KalmanFilter *kf, float GX, float GY, float GZ, float AX, flo
     kf->theta_hat = kf->state_estimate[2];
 }
 // <---- ------ Get Accel Angles ------ ---->
-void Get_AccelAngles(float ax, float ay, float az, float* phi, float* theta)
+void Kalman_Get_AccelAngles(float ax, float ay, float az, float* phi, float* theta)
 {
     *phi = atan2(ay, sqrt(ax * ax + az * az));
     *theta = atan2(-ax, sqrt(ay * ay + az * az));
 }
 
 // <---- ------ Get Roll ------ ---->
-float kalman_get_roll(KalmanFilter *kf)
+float Kalman_Get_Roll(KalmanFilter *kf)
 {
     return kf->phi_hat * 180.0f / M_PI;
 }
 
 // <---- ------ Get Pitch ------ ---->
-float kalman_get_pitch(KalmanFilter *kf)
+float Kalman_Get_Pitch(KalmanFilter *kf)
 {
     return kf->theta_hat * 180.0f / M_PI;
 }

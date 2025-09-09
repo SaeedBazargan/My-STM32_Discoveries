@@ -1,4 +1,4 @@
-Core/Src/main.o: ../Core/Src/main.c \
+Lib/IMU_ComplementaryFilter.o: ../Lib/IMU_ComplementaryFilter.c \
  C:/Users/Bazar/Desktop/My-STM32_Discoveries/STM32F411_Discovery/STM32F411Discovery_MPU9250_Kalman_ComplementaryFilter_FreeRTOS/MPU9250_Kalman_ComplementaryFilter_FreeRTOS/Lib/HAL_MPU9250.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
@@ -29,7 +29,7 @@ Core/Src/main.o: ../Core/Src/main.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  C:/Users/Bazar/Desktop/My-STM32_Discoveries/STM32F411_Discovery/STM32F411Discovery_MPU9250_Kalman_ComplementaryFilter_FreeRTOS/MPU9250_Kalman_ComplementaryFilter_FreeRTOS/Lib/IMU_KalmanFilter.h \
- ../Core/Inc/main.h \
+ ../Lib/IMU_ComplementaryFilter.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  ../Core/Inc/FreeRTOSConfig.h \
@@ -46,10 +46,7 @@ Core/Src/main.o: ../Core/Src/main.c \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
- C:/Users/Bazar/Desktop/My-STM32_Discoveries/STM32F411_Discovery/STM32F411Discovery_MPU9250_Kalman_ComplementaryFilter_FreeRTOS/MPU9250_Kalman_ComplementaryFilter_FreeRTOS/Lib/HAL_MPU9250.h \
- C:/Users/Bazar/Desktop/My-STM32_Discoveries/STM32F411_Discovery/STM32F411Discovery_MPU9250_Kalman_ComplementaryFilter_FreeRTOS/MPU9250_Kalman_ComplementaryFilter_FreeRTOS/Lib/IMU_KalmanFilter.h \
- C:/Users/Bazar/Desktop/My-STM32_Discoveries/STM32F411_Discovery/STM32F411Discovery_MPU9250_Kalman_ComplementaryFilter_FreeRTOS/MPU9250_Kalman_ComplementaryFilter_FreeRTOS/Lib/IMU_ComplementaryFilter.h
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 C:/Users/Bazar/Desktop/My-STM32_Discoveries/STM32F411_Discovery/STM32F411Discovery_MPU9250_Kalman_ComplementaryFilter_FreeRTOS/MPU9250_Kalman_ComplementaryFilter_FreeRTOS/Lib/HAL_MPU9250.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -80,7 +77,7 @@ C:/Users/Bazar/Desktop/My-STM32_Discoveries/STM32F411_Discovery/STM32F411Discove
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 C:/Users/Bazar/Desktop/My-STM32_Discoveries/STM32F411_Discovery/STM32F411Discovery_MPU9250_Kalman_ComplementaryFilter_FreeRTOS/MPU9250_Kalman_ComplementaryFilter_FreeRTOS/Lib/IMU_KalmanFilter.h:
-../Core/Inc/main.h:
+../Lib/IMU_ComplementaryFilter.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
@@ -98,6 +95,3 @@ C:/Users/Bazar/Desktop/My-STM32_Discoveries/STM32F411_Discovery/STM32F411Discove
 ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
-C:/Users/Bazar/Desktop/My-STM32_Discoveries/STM32F411_Discovery/STM32F411Discovery_MPU9250_Kalman_ComplementaryFilter_FreeRTOS/MPU9250_Kalman_ComplementaryFilter_FreeRTOS/Lib/HAL_MPU9250.h:
-C:/Users/Bazar/Desktop/My-STM32_Discoveries/STM32F411_Discovery/STM32F411Discovery_MPU9250_Kalman_ComplementaryFilter_FreeRTOS/MPU9250_Kalman_ComplementaryFilter_FreeRTOS/Lib/IMU_KalmanFilter.h:
-C:/Users/Bazar/Desktop/My-STM32_Discoveries/STM32F411_Discovery/STM32F411Discovery_MPU9250_Kalman_ComplementaryFilter_FreeRTOS/MPU9250_Kalman_ComplementaryFilter_FreeRTOS/Lib/IMU_ComplementaryFilter.h:

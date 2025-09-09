@@ -1,7 +1,6 @@
-../Lib/IMU_KalmanFilter.c:17:6:kalman_init	8	static
-../Lib/IMU_KalmanFilter.c:53:6:kalman_calibrate	40	static
-../Lib/IMU_KalmanFilter.c:257:6:Get_AccelAngles	40	static
-../Lib/IMU_KalmanFilter.c:77:6:kalman_update	680	static
-../Lib/IMU_KalmanFilter.c:263:7:kalman_get_roll	8	static
-../Lib/IMU_KalmanFilter.c:268:7:kalman_get_pitch	8	static
-../Lib/IMU_KalmanFilter.c:273:7:kalman_get_yaw	8	static
+../Lib/IMU_KalmanFilter.c:17:6:Kalman_Init	8	static
+../Lib/IMU_KalmanFilter.c:52:6:Kalman_Calibrate	40	static
+../Lib/IMU_KalmanFilter.c:247:6:Kalman_Get_AccelAngles	40	static
+../Lib/IMU_KalmanFilter.c:76:6:Kalman_Update	672	static
+../Lib/IMU_KalmanFilter.c:254:7:Kalman_Get_Roll	8	static
+../Lib/IMU_KalmanFilter.c:260:7:Kalman_Get_Pitch	8	static

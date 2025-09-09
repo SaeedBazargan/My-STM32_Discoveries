@@ -1,0 +1,6 @@
+../Lib/IMU_ComplementaryFilter.c:16:6:Complementary_Init	1
+../Lib/IMU_ComplementaryFilter.c:24:6:Complementary_Get_AccelAngles	1
+../Lib/IMU_ComplementaryFilter.c:31:6:Get_GyroBias	3
+../Lib/IMU_ComplementaryFilter.c:51:6:Complementary_Update	1
+../Lib/IMU_ComplementaryFilter.c:75:7:Complementary_Get_Roll	1
+../Lib/IMU_ComplementaryFilter.c:80:7:Complementary_Get_Pitch	1

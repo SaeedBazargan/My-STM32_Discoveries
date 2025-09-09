@@ -6,14 +6,17 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Lib/HAL_MPU9250.c \
+../Lib/IMU_ComplementaryFilter.c \
 ../Lib/IMU_KalmanFilter.c 
 
 OBJS += \
 ./Lib/HAL_MPU9250.o \
+./Lib/IMU_ComplementaryFilter.o \
 ./Lib/IMU_KalmanFilter.o 
 
 C_DEPS += \
 ./Lib/HAL_MPU9250.d \
+./Lib/IMU_ComplementaryFilter.d \
 ./Lib/IMU_KalmanFilter.d 
 
 
@@ -24,7 +27,7 @@ Lib/%.o Lib/%.su Lib/%.cyclo: ../Lib/%.c Lib/subdir.mk
 clean: clean-Lib
 
 clean-Lib:
-	-$(RM) ./Lib/HAL_MPU9250.cyclo ./Lib/HAL_MPU9250.d ./Lib/HAL_MPU9250.o ./Lib/HAL_MPU9250.su ./Lib/IMU_KalmanFilter.cyclo ./Lib/IMU_KalmanFilter.d ./Lib/IMU_KalmanFilter.o ./Lib/IMU_KalmanFilter.su
+	-$(RM) ./Lib/HAL_MPU9250.cyclo ./Lib/HAL_MPU9250.d ./Lib/HAL_MPU9250.o ./Lib/HAL_MPU9250.su ./Lib/IMU_ComplementaryFilter.cyclo ./Lib/IMU_ComplementaryFilter.d ./Lib/IMU_ComplementaryFilter.o ./Lib/IMU_ComplementaryFilter.su ./Lib/IMU_KalmanFilter.cyclo ./Lib/IMU_KalmanFilter.d ./Lib/IMU_KalmanFilter.o ./Lib/IMU_KalmanFilter.su
 
 .PHONY: clean-Lib
 

@@ -24,6 +24,7 @@
 "./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o"
 "./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o"
 "./Lib/HAL_MPU9250.o"
+"./Lib/IMU_ComplementaryFilter.o"
 "./Lib/IMU_KalmanFilter.o"
 "./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.o"
 "./Middlewares/Third_Party/FreeRTOS/Source/croutine.o"

@@ -32,11 +32,11 @@ typedef struct
     float dt;
 }KalmanFilter;
 
-void kalman_init(KalmanFilter *kf);
-void kalman_calibrate(KalmanFilter *kf, float phi_acc_samples, float theta_acc_samples, int N);
-void kalman_update(KalmanFilter *kf, float GX, float GY, float GZ, float AX, float AY, float AZ, float dt);
-void Get_AccelAngles(float ax, float ay, float az, float* phi, float* theta);
-float kalman_get_roll(KalmanFilter *kf);
-float kalman_get_pitch(KalmanFilter *kf);
+void Kalman_Init(KalmanFilter *kf);
+void Kalman_Calibrate(KalmanFilter *kf, float phi_acc_samples, float theta_acc_samples, int N);
+void Kalman_Update(KalmanFilter *kf, float GX, float GY, float GZ, float AX, float AY, float AZ, float dt);
+void Kalman_Get_AccelAngles(float ax, float ay, float az, float* phi, float* theta);
+float Kalman_Get_Roll(KalmanFilter *kf);
+float Kalman_Get_Pitch(KalmanFilter *kf);
 
 #endif /* IMU_KALMANFILTER_H_ */
