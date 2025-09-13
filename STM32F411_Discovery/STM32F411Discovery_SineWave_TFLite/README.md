@@ -14,7 +14,19 @@ I used a Linux system for building TensorFlow Lite Micro, and I recommend you do
 3. ```bash
    make -f tensorflow/lite/micro/tools/make/Makefile TARGET=cortex_m_generic TARGET_ARCH=cortex-m4 microlite
 For more details, [check the](https://github.com/tensorflow/tflite-micro/blob/main/tensorflow/lite/micro/cortex_m_generic/README.md) 
+4. After building, you will get a file named **libtensorflow-microlite.a**.
+**NOTE:**If you are working on Windows, copy this file over to your Windows environment.
+5. add libtensorflow-microlite.a under Properties → C/C++ Build → Settings → MCU GCC Linker → Libraries in the STM32CubeIDE **(See the images below for detailed steps.)**
 
+6. Run the project generation script to create a standalone TFLM tree:  
+   ```bash
+   python3 tensorflow/lite/micro/tools/project_generation/create_tflm_tree.py <desired_path>
+for example:
+   ```bash
+   python3 tensorflow/lite/micro/tools/project_generation/create_tflm_tree.py ~/Mytflm/tflm-tree
+
+7. A new folder with your chosen name will be created (e.g., Mytflm).This folder contains signal, tensorflow, and third_party.
+**NOTE:**If you are working on Windows, you will also need to transfer this folder to your Windows environment.
 
 
 ## Output Example
