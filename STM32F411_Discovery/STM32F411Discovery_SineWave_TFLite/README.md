@@ -1,5 +1,21 @@
 # How to Install
+## Acknowledgments
+Special thanks to **DevHeads** for their [tutorial video](https://www.youtube.com/watch?v=6XJ4M31ZvH0&list=PL2mKSkagAaJjjnVujAPwVsZobEfADTAxN&index=3)  
+and **Shawn Hymel** for his [video](https://www.youtube.com/watch?v=gDFWCxrJruQ&t=742s).
+
 ## The way I took:
+I used a Linux system for building TensorFlow Lite Micro, and I recommend you do the same:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/tensorflow/tflite-micro.git
+
+2. cd tflite-micro
+3. ```bash
+   make -f tensorflow/lite/micro/tools/make/Makefile TARGET=cortex_m_generic TARGET_ARCH=cortex-m4 microlite
+For more details, [check the](https://github.com/tensorflow/tflite-micro/blob/main/tensorflow/lite/micro/cortex_m_generic/README.md) 
+
+
 
 ## Output Example
 ![UART Output Screenshot](images/1.png)
