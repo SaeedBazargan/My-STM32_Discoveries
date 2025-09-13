@@ -1,0 +1,2 @@
+../tensorflow_lite/signal/src/log.cc:47:10:uint32_t tflite::tflm_signal::{anonymous}::Log2FractionPart32(uint32_t, uint32_t)	56	static
+../tensorflow_lite/signal/src/log.cc:70:10:uint32_t tflite::tflm_signal::Log32(uint32_t, uint32_t)	64	static

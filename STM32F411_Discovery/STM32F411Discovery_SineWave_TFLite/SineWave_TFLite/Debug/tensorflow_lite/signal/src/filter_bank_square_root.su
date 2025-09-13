@@ -1,0 +1,1 @@
+../tensorflow_lite/signal/src/filter_bank_square_root.cc:23:6:void tflite::tflm_signal::FilterbankSqrt(const uint64_t*, int, int, uint32_t*)	32	static

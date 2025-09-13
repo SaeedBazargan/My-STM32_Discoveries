@@ -1,0 +1,1 @@
+../tensorflow_lite/signal/src/filter_bank.cc:21:6:void tflite::tflm_signal::FilterbankAccumulateChannels(const FilterbankConfig*, const uint32_t*, uint64_t*)	3

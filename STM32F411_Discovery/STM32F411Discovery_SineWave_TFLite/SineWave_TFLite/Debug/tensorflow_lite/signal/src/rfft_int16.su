@@ -1,0 +1,3 @@
+../tensorflow_lite/signal/src/rfft_int16.cc:26:8:size_t tflm_signal::RfftInt16GetNeededMemory(int32_t)	24	static
+../tensorflow_lite/signal/src/rfft_int16.cc:32:7:void* tflm_signal::RfftInt16Init(int32_t, void*, size_t)	24	static
+../tensorflow_lite/signal/src/rfft_int16.cc:36:6:void tflm_signal::RfftInt16Apply(void*, const int16_t*, Complex<short int>*)	24	static

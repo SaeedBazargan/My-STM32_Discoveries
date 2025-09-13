@@ -1,0 +1,5 @@
+C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344\tools\bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/c++/13.3.1/cmath:215:3:constexpr float std::exp(float)	1
+C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344\tools\bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/c++/13.3.1/cmath:476:3:constexpr float std::tanh(float)	1
+../tensorflow_lite/tensorflow/lite/micro/kernels/micro_tensor_utils.cc:33:6:void tflite::PortableApplySigmoidToVector(const float*, int, float*)	2
+../tensorflow_lite/tensorflow/lite/micro/kernels/micro_tensor_utils.cc:40:6:void tflite::PortableApplyTanhToVector(const float*, int, float*)	2
+../tensorflow_lite/tensorflow/lite/micro/kernels/micro_tensor_utils.cc:46:6:void tflite::PortableApplyActivationToVector(const float*, int, TfLiteFusedActivation, float*)	7

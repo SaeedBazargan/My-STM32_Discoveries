@@ -1,0 +1,2 @@
+../tensorflow_lite/tensorflow/lite/micro/debug_log.cc:39:17:void DebugLog(const char*, va_list)	16	static
+../tensorflow_lite/tensorflow/lite/micro/debug_log.cc:50:16:int DebugVsnprintf(char*, size_t, const char*, va_list)	24	static

@@ -1,0 +1,1 @@
+../tensorflow_lite/signal/src/energy.cc:21:6:void tflite::tflm_signal::SpectrumToEnergy(const Complex<short int>*, int, int, uint32_t*)	32	static

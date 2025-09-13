@@ -1,0 +1,14 @@
+C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344\tools\arm-none-eabi\include\c++\13.3.1\arm-none-eabi\thumb\v7e-m+fp\hard\bits\gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+C:/Users/Bazar/Desktop/My-STM32_Discoveries/STM32F411_Discovery/STM32F411Discovery_SineWave_TFLite/SineWave_TFLite/tensorflow_lite/tensorflow/lite/micro/micro_graph.h:28:7:constexpr tflite::MicroGraph::MicroGraph()	16	static
+C:/Users/Bazar/Desktop/My-STM32_Discoveries/STM32F411_Discovery/STM32F411Discovery_SineWave_TFLite/SineWave_TFLite/tensorflow_lite/tensorflow/lite/micro/micro_graph.h:30:11:tflite::MicroGraph::~MicroGraph()	16	static
+C:/Users/Bazar/Desktop/My-STM32_Discoveries/STM32F411_Discovery/STM32F411Discovery_SineWave_TFLite/SineWave_TFLite/tensorflow_lite/tensorflow/lite/micro/micro_graph.h:30:11:virtual tflite::MicroGraph::~MicroGraph()	16	static
+../tensorflow_lite/tensorflow/lite/micro/mock_micro_graph.cc:22:1:tflite::MockMicroGraph::MockMicroGraph(tflite::SingleArenaBufferAllocator*)	48	static
+../tensorflow_lite/tensorflow/lite/micro/mock_micro_graph.cc:39:14:virtual TfLiteStatus tflite::MockMicroGraph::InvokeSubgraph(int)	16	static
+../tensorflow_lite/tensorflow/lite/micro/mock_micro_graph.cc:44:8:virtual size_t tflite::MockMicroGraph::NumSubgraphInputs(int)	16	static
+../tensorflow_lite/tensorflow/lite/micro/mock_micro_graph.cc:46:19:virtual TfLiteEvalTensor* tflite::MockMicroGraph::GetSubgraphInput(int, int)	24	static
+../tensorflow_lite/tensorflow/lite/micro/mock_micro_graph.cc:51:8:virtual size_t tflite::MockMicroGraph::NumSubgraphOutputs(int)	16	static
+../tensorflow_lite/tensorflow/lite/micro/mock_micro_graph.cc:53:19:virtual TfLiteEvalTensor* tflite::MockMicroGraph::GetSubgraphOutput(int, int)	24	static
+../tensorflow_lite/tensorflow/lite/micro/mock_micro_graph.cc:58:5:virtual int tflite::MockMicroGraph::NumSubgraphs()	16	static
+../tensorflow_lite/tensorflow/lite/micro/mock_micro_graph.cc:60:25:virtual tflite::MicroResourceVariables* tflite::MockMicroGraph::GetResourceVariables()	16	static
+C:/Users/Bazar/Desktop/My-STM32_Discoveries/STM32F411_Discovery/STM32F411Discovery_SineWave_TFLite/SineWave_TFLite/tensorflow_lite/tensorflow/lite/micro/mock_micro_graph.h:29:7:tflite::MockMicroGraph::~MockMicroGraph()	16	static
+C:/Users/Bazar/Desktop/My-STM32_Discoveries/STM32F411_Discovery/STM32F411Discovery_SineWave_TFLite/SineWave_TFLite/tensorflow_lite/tensorflow/lite/micro/mock_micro_graph.h:29:7:virtual tflite::MockMicroGraph::~MockMicroGraph()	16	static

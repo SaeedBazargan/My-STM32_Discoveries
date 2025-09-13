@@ -1,0 +1,1 @@
+../tensorflow_lite/signal/src/filter_bank_log.cc:23:6:void tflite::tflm_signal::FilterbankLog(const uint32_t*, int, int32_t, uint32_t, int16_t*)	40	static

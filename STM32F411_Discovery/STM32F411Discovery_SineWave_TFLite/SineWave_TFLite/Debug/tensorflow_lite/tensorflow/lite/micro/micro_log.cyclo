@@ -1,0 +1,5 @@
+../tensorflow_lite/tensorflow/lite/micro/micro_log.cc:28:6:)	1
+../tensorflow_lite/tensorflow/lite/micro/micro_log.cc:37:6:void VMicroPrintf(const char*, va_list)	1
+../tensorflow_lite/tensorflow/lite/micro/micro_log.cc:43:6:)	1
+../tensorflow_lite/tensorflow/lite/micro/micro_log.cc:50:5:)	1
+../tensorflow_lite/tensorflow/lite/micro/micro_log.cc:58:5:int MicroVsnprintf(char*, size_t, const char*, va_list)	1

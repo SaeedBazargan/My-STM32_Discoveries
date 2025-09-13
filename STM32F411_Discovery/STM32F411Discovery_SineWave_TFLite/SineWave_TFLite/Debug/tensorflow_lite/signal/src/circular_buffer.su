@@ -1,0 +1,21 @@
+../tensorflow_lite/signal/src/circular_buffer.cc:27:6:void tflite::tflm_signal::CircularBufferReset(CircularBuffer*)	16	static
+../tensorflow_lite/signal/src/circular_buffer.cc:35:8:size_t tflite::tflm_signal::CircularBufferGetNeededMemory(size_t)	16	static
+../tensorflow_lite/signal/src/circular_buffer.cc:39:17:tflite::tflm_signal::CircularBuffer* tflite::tflm_signal::CircularBufferInit(size_t, void*, size_t)	32	static
+../tensorflow_lite/signal/src/circular_buffer.cc:49:8:size_t tflite::tflm_signal::CircularBufferCapacity(const CircularBuffer*)	16	static
+../tensorflow_lite/signal/src/circular_buffer.cc:53:6:bool tflite::tflm_signal::CircularBufferFull(const CircularBuffer*)	16	static
+../tensorflow_lite/signal/src/circular_buffer.cc:57:6:bool tflite::tflm_signal::CircularBufferEmpty(const CircularBuffer*)	16	static
+../tensorflow_lite/signal/src/circular_buffer.cc:61:8:size_t tflite::tflm_signal::CircularBufferAvailable(const CircularBuffer*)	24	static
+../tensorflow_lite/signal/src/circular_buffer.cc:74:8:size_t tflite::tflm_signal::CircularBufferCanWrite(const CircularBuffer*)	24	static
+../tensorflow_lite/signal/src/circular_buffer.cc:78:6:void tflite::tflm_signal::CircularBufferAdd(CircularBuffer*, int16_t)	16	static
+../tensorflow_lite/signal/src/circular_buffer.cc:88:6:void tflite::tflm_signal::CircularBufferWrite(CircularBuffer*, const int16_t*, size_t)	56	static
+../tensorflow_lite/signal/src/circular_buffer.cc:117:6:void tflite::tflm_signal::CircularBufferWriteZeros(CircularBuffer*, size_t)	48	static
+../tensorflow_lite/signal/src/circular_buffer.cc:145:10:int16_t* tflite::tflm_signal::CircularBufferReserveForWrite(CircularBuffer*, size_t)	24	static
+../tensorflow_lite/signal/src/circular_buffer.cc:157:6:void tflite::tflm_signal::CircularBufferExtend(CircularBuffer*, size_t, int32_t)	48	static
+../tensorflow_lite/signal/src/circular_buffer.cc:186:9:int16_t tflite::tflm_signal::CircularBufferRemove(CircularBuffer*)	24	static
+../tensorflow_lite/signal/src/circular_buffer.cc:198:9:int16_t tflite::tflm_signal::CircularBufferPeek(const CircularBuffer*, size_t)	24	static
+../tensorflow_lite/signal/src/circular_buffer.cc:208:6:void tflite::tflm_signal::CircularBufferRewind(CircularBuffer*, size_t)	16	static
+../tensorflow_lite/signal/src/circular_buffer.cc:219:16:const int16_t* tflite::tflm_signal::CircularBufferPeekDirect(const CircularBuffer*, size_t)	24	static
+../tensorflow_lite/signal/src/circular_buffer.cc:229:16:const int16_t* tflite::tflm_signal::CircularBufferPeekMax(const CircularBuffer*, size_t*)	16	static
+../tensorflow_lite/signal/src/circular_buffer.cc:241:6:void tflite::tflm_signal::CircularBufferGet(CircularBuffer*, size_t, int16_t*)	56	static
+../tensorflow_lite/signal/src/circular_buffer.cc:260:6:void tflite::tflm_signal::CircularBufferDiscard(CircularBuffer*, size_t)	16	static
+../tensorflow_lite/signal/src/circular_buffer.cc:272:6:void tflite::tflm_signal::CircularBufferShift(CircularBuffer*, int)	16	static

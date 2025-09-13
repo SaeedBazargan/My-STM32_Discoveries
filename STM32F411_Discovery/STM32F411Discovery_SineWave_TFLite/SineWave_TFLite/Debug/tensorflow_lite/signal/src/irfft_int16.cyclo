@@ -1,0 +1,3 @@
+../tensorflow_lite/signal/src/irfft_int16.cc:27:8:size_t tflite::tflm_signal::IrfftInt16GetNeededMemory(int32_t)	1
+../tensorflow_lite/signal/src/irfft_int16.cc:33:7:void* tflite::tflm_signal::IrfftInt16Init(int32_t, void*, size_t)	1
+../tensorflow_lite/signal/src/irfft_int16.cc:37:6:void tflite::tflm_signal::IrfftInt16Apply(void*, const Complex<short int>*, int16_t*)	1
