@@ -2,7 +2,7 @@
 ## The way I took:
 
 ## Output Example
-![UART Output Screenshot](C:\Users\Bazar\Desktop\images\1.png)
+![UART Output Screenshot](images/1.png)
 
 
 
