@@ -1,0 +1,10 @@
+../Lib/SDCard_Configuration.c:16:6:Mount_SD	16	static
+../Lib/SDCard_Configuration.c:31:6:Unmount_SD	16	static
+../Lib/SDCard_Configuration.c:46:9:Format_SD	64	static
+../Lib/SDCard_Configuration.c:84:9:Create_File	16	static
+../Lib/SDCard_Configuration.c:115:9:Update_File	16	static
+../Lib/SDCard_Configuration.c:154:9:Write_File	16	static
+../Lib/SDCard_Configuration.c:193:9:Read_File	24	static
+../Lib/SDCard_Configuration.c:239:9:Remove_File	16	static
+../Lib/SDCard_Configuration.c:263:9:Create_Dir	16	static
+../Lib/SDCard_Configuration.c:277:6:Check_SD_Space	16	static
