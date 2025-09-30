@@ -58,8 +58,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Middlewares/Third_Party/FatFs/src/ff.h ../FATFS/Target/sd_diskio.h \
  ../Core/Inc/ltdc.h ../Core/Inc/rng.h ../Core/Inc/sdmmc.h \
  ../Core/Inc/gpio.h \
- C:/Users/Bazar/Desktop/sbzrgn/STM32F746Discovery_LTDC_BMP_SdCard_FreeRTOS/LTDC_BMP_SdCard_FreeRTOS/Lib/MyTFT.h \
- C:/Users/Bazar/Desktop/sbzrgn/STM32F746Discovery_LTDC_BMP_SdCard_FreeRTOS/LTDC_BMP_SdCard_FreeRTOS/Lib/SDCard_Configuration.h
+ C:/Users/Bazar/Desktop/My-STM32_Discoveries/STM32F746_Discovery/STM32F746Discovery_LTDC_BMP_SdCard_FreeRTOS/LTDC_BMP_SdCard_FreeRTOS/Lib/MyTFT.h \
+ C:/Users/Bazar/Desktop/My-STM32_Discoveries/STM32F746_Discovery/STM32F746Discovery_LTDC_BMP_SdCard_FreeRTOS/LTDC_BMP_SdCard_FreeRTOS/Lib/SDCard_Configuration.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:
 ../Core/Inc/stm32f7xx_hal_conf.h:
@@ -127,5 +127,5 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Inc/rng.h:
 ../Core/Inc/sdmmc.h:
 ../Core/Inc/gpio.h:
-C:/Users/Bazar/Desktop/sbzrgn/STM32F746Discovery_LTDC_BMP_SdCard_FreeRTOS/LTDC_BMP_SdCard_FreeRTOS/Lib/MyTFT.h:
-C:/Users/Bazar/Desktop/sbzrgn/STM32F746Discovery_LTDC_BMP_SdCard_FreeRTOS/LTDC_BMP_SdCard_FreeRTOS/Lib/SDCard_Configuration.h:
+C:/Users/Bazar/Desktop/My-STM32_Discoveries/STM32F746_Discovery/STM32F746Discovery_LTDC_BMP_SdCard_FreeRTOS/LTDC_BMP_SdCard_FreeRTOS/Lib/MyTFT.h:
+C:/Users/Bazar/Desktop/My-STM32_Discoveries/STM32F746_Discovery/STM32F746Discovery_LTDC_BMP_SdCard_FreeRTOS/LTDC_BMP_SdCard_FreeRTOS/Lib/SDCard_Configuration.h:

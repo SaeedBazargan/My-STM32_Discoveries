@@ -1,7 +1,12 @@
 #include "SDCard_Configuration.h"
-#include "stm32f7xx_hal.h"
 
-//<---- --------------- Variables --------------- ---->
+//<---- --------------- Bitmap Variables --------------- ---->
+#define BMP_HEADER_SIZE 		54 // Standard BMP header size
+#define LCD_WIDTH 				480
+#define LCD_HEIGHT 				272
+uint16_t imageBuf[LCD_WIDTH * LCD_HEIGHT]; // Static buffer to hold image data
+
+//<---- --------------- SdCard Variables --------------- ---->
 FATFS fs;  				// file system
 FIL fil; 				// File
 FILINFO fno;			// File Info
@@ -274,7 +279,7 @@ FRESULT Create_Dir(char *name)
 }
 //<---- -------------------------------------------------------- ---->
 
-void Check_SD_Space (void)
+void Check_SD_Space(void)
 {
 	uint32_t total, free_space;
 
@@ -286,3 +291,55 @@ void Check_SD_Space (void)
     free_space = (uint32_t)(fre_clust * pfs->csize * 0.5);
     printf("SD_CARD Free Space: \t%lu\n", free_space);
 }
+//<---- -------------------------------------------------------- ---->
+
+uint16_t* Read_Bitmap(char *filename)
+{
+	uint8_t bmpHeader[BMP_HEADER_SIZE];
+	uint8_t bmpPixelData[3]; // BMP stores 24-bit (B, G, R)
+
+	Mount_SD(SDPath);
+	// Open BMP file
+	fresult = f_open(&fil, filename, FA_READ);
+	if(fresult != FR_OK)
+	{
+		printf("Error opening BMP file! Code: %d\n", fresult);
+		return NULL;
+	}
+
+	// Read the BMP header
+	f_read(&fil, bmpHeader, BMP_HEADER_SIZE, &br);
+
+	// Verify BMP signature ('BM' = 0x42 0x4D)
+	if(bmpHeader[0] != 'B' || bmpHeader[1] != 'M')
+	{
+		printf("Error: Not a valid BMP file!\n");
+		f_close(&fil);
+
+		return NULL;
+	}
+
+    // BMP stores pixels bottom-up, so we read in reverse order
+    for(uint16_t y = LCD_HEIGHT - 1; y >= 0; y--)
+    {
+        for(uint16_t x = 0; x < LCD_WIDTH; x++)
+        {
+            // Read 24-bit pixel (B, G, R)
+            f_read(&fil, bmpPixelData, 3, &br);
+
+            // Convert 24-bit RGB888 to 16-bit RGB565
+            uint16_t r = (bmpPixelData[2] >> 3) & 0x1F; // Red   (5 bits)
+            uint16_t g = (bmpPixelData[1] >> 2) & 0x3F; // Green (6 bits)
+            uint16_t b = (bmpPixelData[0] >> 3) & 0x1F; // Blue  (5 bits)
+
+            // Merge into RGB565 format
+            imageBuf[y * LCD_WIDTH + x] = (r << 11) | (g << 5) | b;
+        }
+    }
+    // Close the file
+    f_close(&fil);
+
+    // Return pointer to the buffer
+    return imageBuf;
+}
+//<---- -------------------------------------------------------- ---->

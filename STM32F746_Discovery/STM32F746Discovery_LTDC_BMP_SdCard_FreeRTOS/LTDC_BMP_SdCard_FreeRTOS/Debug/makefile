@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (12.3.rel1)
+# Toolchain: GNU Tools for STM32 (13.3.rel1)
 ################################################################################
 
 -include ../makefile.init
@@ -69,8 +69,8 @@ all: main-build
 main-build: LTDC_BMP_SdCard_FreeRTOS.elf secondary-outputs
 
 # Tool invocations
-LTDC_BMP_SdCard_FreeRTOS.elf LTDC_BMP_SdCard_FreeRTOS.map: $(OBJS) $(USER_OBJS) C:\Users\Bazar\Desktop\sbzrgn\STM32F746Discovery_LTDC_BMP_SdCard_FreeRTOS\LTDC_BMP_SdCard_FreeRTOS\STM32F746NGHX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "LTDC_BMP_SdCard_FreeRTOS.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\Bazar\Desktop\sbzrgn\STM32F746Discovery_LTDC_BMP_SdCard_FreeRTOS\LTDC_BMP_SdCard_FreeRTOS\STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LTDC_BMP_SdCard_FreeRTOS.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+LTDC_BMP_SdCard_FreeRTOS.elf LTDC_BMP_SdCard_FreeRTOS.map: $(OBJS) $(USER_OBJS) C:\Users\Bazar\Desktop\My-STM32_Discoveries\STM32F746_Discovery\STM32F746Discovery_LTDC_BMP_SdCard_FreeRTOS\LTDC_BMP_SdCard_FreeRTOS\STM32F746NGHX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "LTDC_BMP_SdCard_FreeRTOS.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\Bazar\Desktop\My-STM32_Discoveries\STM32F746_Discovery\STM32F746Discovery_LTDC_BMP_SdCard_FreeRTOS\LTDC_BMP_SdCard_FreeRTOS\STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LTDC_BMP_SdCard_FreeRTOS.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

@@ -69,7 +69,7 @@ void loop()
   if(temp == 1)
   {
     camera_fb_t *fb = esp_camera_fb_get(); // Capture frame
-    digitalWrite(4, HIGH);
+    // digitalWrite(4, HIGH);
 
     if(!fb)
     {
@@ -80,16 +80,19 @@ void loop()
 
     // <---- ------ Send start marker "IMG0" ------ ---->
     MySerial.write("IMG0", 4);
+    // Serial.write("IMG0", 4);
 
     // <---- ------ Send frame size first ------ ---->
     uint32_t img_len = fb->len;
     MySerial.write((uint8_t*)&img_len, sizeof(img_len)); // Send image size (4 bytes)
+    // Serial.write((uint8_t*)&img_len, sizeof(img_len)); // Send image size (4 bytes)
 
     // <---- ------ Send actual image data ------ ---->
     MySerial.write(fb->buf, fb->len); // Send raw JPEG bytes
+    // Serial.write(fb->buf, fb->len); // Send raw JPEG bytes
 
     esp_camera_fb_return(fb); // Release the frame buffer
-    digitalWrite(4, LOW);
+    // digitalWrite(4, LOW);
 
     temp = 0;
   }

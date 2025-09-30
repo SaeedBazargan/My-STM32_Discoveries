@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (12.3.rel1)
+# Toolchain: GNU Tools for STM32 (13.3.rel1)
 ################################################################################
 
 -include ../makefile.init
@@ -68,8 +68,8 @@ all: main-build
 main-build: VCP_SDcard_DMA_FreeRTOS.elf secondary-outputs
 
 # Tool invocations
-VCP_SDcard_DMA_FreeRTOS.elf VCP_SDcard_DMA_FreeRTOS.map: $(OBJS) $(USER_OBJS) E:\sbzrgn\My-STM32_Discoveries\STM32F746_Discovery\STM32F746Discovery_VCP_SDcard_DMA_FreeRTOS\VCP_SDcard_DMA_FreeRTOS\STM32F746NGHX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "VCP_SDcard_DMA_FreeRTOS.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"E:\sbzrgn\My-STM32_Discoveries\STM32F746_Discovery\STM32F746Discovery_VCP_SDcard_DMA_FreeRTOS\VCP_SDcard_DMA_FreeRTOS\STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="VCP_SDcard_DMA_FreeRTOS.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+VCP_SDcard_DMA_FreeRTOS.elf VCP_SDcard_DMA_FreeRTOS.map: $(OBJS) $(USER_OBJS) C:\Users\Bazar\Desktop\My-STM32_Discoveries\STM32F746_Discovery\STM32F746Discovery_VCP_SDcard_DMA_FreeRTOS\VCP_SDcard_DMA_FreeRTOS\STM32F746NGHX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "VCP_SDcard_DMA_FreeRTOS.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\Bazar\Desktop\My-STM32_Discoveries\STM32F746_Discovery\STM32F746Discovery_VCP_SDcard_DMA_FreeRTOS\VCP_SDcard_DMA_FreeRTOS\STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="VCP_SDcard_DMA_FreeRTOS.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

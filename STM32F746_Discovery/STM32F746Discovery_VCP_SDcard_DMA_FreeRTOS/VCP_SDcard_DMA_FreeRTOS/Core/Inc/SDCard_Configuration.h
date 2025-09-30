@@ -17,4 +17,5 @@ FRESULT Read_File(char *name);
 FRESULT Remove_File(char *name);
 FRESULT Create_Dir(char *name);
 void Check_SD_Space(void);
+uint16_t* Read_Bitmap(char *filename);
 #endif /* __HAL_SDCARD_H__ */
