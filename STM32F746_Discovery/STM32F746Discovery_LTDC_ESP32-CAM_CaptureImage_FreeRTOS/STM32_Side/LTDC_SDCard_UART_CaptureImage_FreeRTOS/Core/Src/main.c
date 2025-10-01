@@ -65,7 +65,10 @@ uint32_t imageLen = 0;
 
 uint8_t imageBuffer[ImageBufferSize];
 
+char filename[32];
 char sd_buffer[100];
+#define ImageBuffer_Record		0x01
+#define ReceiveBuffer_Record	0x01
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -150,7 +153,7 @@ int main(void)
   /* add semaphores, ... */
   if(saveSdCardBinarySemaphoreHandle != NULL)
   {
-      /* Non-blocking wait to take the token. This makes current count 0. */
+      // <---- ----- Non-blocking wait to take the token. This makes current count 0 ----- ---->
       osSemaphoreWait(saveSdCardBinarySemaphoreHandle, 0);
   }
   /* USER CODE END RTOS_SEMAPHORES */
@@ -469,19 +472,79 @@ void StartAnalysisDataTask(void const * argument)
 void StartSaveToSdCardTask(void const * argument)
 {
   /* USER CODE BEGIN StartSaveToSdCardTask */
+	uint16_t SD_Chunk_Size = 512;
   /* Infinite loop */
   for(;;)
   {
 	  if(xSemaphoreTake(saveSdCardBinarySemaphoreHandle, portMAX_DELAY) == pdTRUE)
 	  {
+#if ImageBuffer_Record
 		  Mount_SD(SDPath);
 		  Format_SD();
 		  Check_SD_Space();
-		  Create_File("MRL.txt");
+		  Create_File("MRL1.txt");
+
+		  // Write a header
 		  sprintf(sd_buffer, "Hello to MRL-HSL from Sbzrgn \n");
-		  Update_File("MRL.txt", sd_buffer);
+		  Update_File("MRL1.txt", sd_buffer);
+
+		  // Write imageBuffer in HEX in chunks
+		  for(uint32_t i = 0; i < imageLen; i += SD_Chunk_Size)
+		  {
+			  uint32_t chunkEnd = i + SD_Chunk_Size;
+			  if(chunkEnd > imageLen)
+			  {
+				  chunkEnd = imageLen;
+			  }
+
+			  uint32_t bufIndex = 0;
+			  for(uint32_t j = i; j < chunkEnd; j++)
+			  {
+				  // convert byte to HEX string
+				  bufIndex += sprintf(&sd_buffer[bufIndex], "%02X", imageBuffer[j]);
+			  }
+
+			  // Append chunk to SD file
+			  Update_File("MRL1.txt", sd_buffer);
+		  }
+
 		  Unmount_SD(SDPath);
 		  printf("sssssssssssssssssssssssssss\r\n");
+
+#endif
+#if ReceiveBuffer_Record
+		  Mount_SD(SDPath);
+//		  Format_SD();
+		  Check_SD_Space();
+		  Create_File("MRL2.txt");
+
+		  // Write a header
+		  sprintf(sd_buffer, "Hello to MRL-HSL from Sbzrgn \n");
+		  Update_File("MRL2.txt", sd_buffer);
+
+		  // Write imageBuffer in HEX in chunks
+		  for(uint32_t i = 0; i < imageLen; i += SD_Chunk_Size)
+		  {
+			  uint32_t chunkEnd = i + SD_Chunk_Size;
+			  if(chunkEnd > imageLen)
+			  {
+				  chunkEnd = imageLen;
+			  }
+
+			  uint32_t bufIndex = 0;
+			  for(uint32_t j = i; j < chunkEnd; j++)
+			  {
+				  // convert byte to HEX string
+				  bufIndex += sprintf(&sd_buffer[bufIndex], "%02X", recBuffer[j]);
+			  }
+
+			  // Append chunk to SD file
+			  Update_File("MRL2.txt", sd_buffer);
+		  }
+
+		  Unmount_SD(SDPath);
+		  printf("sssssssssssssssssssssssssss\r\n");
+#endif
 	  }
   }
   /* USER CODE END StartSaveToSdCardTask */

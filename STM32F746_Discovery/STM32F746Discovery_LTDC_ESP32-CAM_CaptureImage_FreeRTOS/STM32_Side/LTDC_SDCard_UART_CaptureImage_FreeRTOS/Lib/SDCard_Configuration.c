@@ -131,7 +131,7 @@ FRESULT Update_File(char *name, char *data)
 			return fresult;
 		}
 
-		fresult = f_write(&fil, data, strlen (data), &bw);					// Writing text
+		fresult = f_write(&fil, data, strlen(data), &bw);					// Writing text
 		printf("Fresult in Write File => %d \n", fresult);
 
 		if(fresult == FR_OK)

@@ -96,6 +96,7 @@ void loop()
 
     temp = 0;
   }
+
   // if(MySerial.available())
   // {
   //   uint8_t temp = MySerial.read();  // read one raw byte
