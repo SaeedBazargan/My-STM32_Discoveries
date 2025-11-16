@@ -1,7 +1,7 @@
 # How to Install
 ## Acknowledgments
 ## The way I took:
-This guide is based on the official [micro-ROS documentation](https://micro.ros.org/docs/tutorials/core/first_application_rtos/freertos/).
+This guide is based on the official [micro-ROS documentation](https://micro.ros.org/docs/tutorials/core/first_application_linux/).
 
 ## Recommended Setup
 I used **Ubuntu 22.04**, and I strongly recommend using the same version for compatibility.
@@ -41,7 +41,7 @@ Once you have a ROS 2 installation on your computer, follow these steps:
    source install/local_setup.bash
    ```
 
-## 5. micro-ROS Repository
+## 5. micro-ROS Repository(Humble_Branch)
    For more information, visit the [micro-ROS_STM32CubeMX_utilities_repository](https://github.com/micro-ROS/micro_ros_stm32cubemx_utils/tree/humble?tab=readme-ov-file#)
 
 ## 6. Using This Package with STM32CubeIDE
@@ -96,12 +96,3 @@ Once you have a ROS 2 installation on your computer, follow these steps:
 ## 10. Build and run your project
 
 ## 11. Good Luck
-
-## Output Example
-![Output Screenshot](images/1.png)
-![Output Screenshot](images/2.png)
-![Output Screenshot](images/3.png)
-![Output Screenshot](images/4.png)
-![Output Screenshot](images/5.png)
-![Output Screenshot](images/6.png)
-![Output Screenshot](images/7.png)
